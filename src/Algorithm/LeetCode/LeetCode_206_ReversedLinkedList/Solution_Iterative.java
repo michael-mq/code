@@ -5,17 +5,16 @@ package Algorithm.LeetCode.LeetCode_206_ReversedLinkedList;
 
 public class Solution_Iterative {
     public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
+        ListNode curr = null;
 
-        while (curr != null) {
-            ListNode temp = curr.next;
-            curr.next = prev;
-            prev = curr;
-            curr = temp;
+        while (head != null) {
+            ListNode temp = head.next;
+            head.next = curr;
+            curr = head;
+            head = temp;
         }
 
-        return prev;
+        return curr;
     }
 
     public static void main(String[] args) {
