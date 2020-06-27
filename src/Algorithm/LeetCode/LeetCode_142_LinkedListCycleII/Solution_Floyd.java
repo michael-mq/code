@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_142_LinkedListCycleII.LeetCode_141_LinkedListCycle;
+package Algorithm.LeetCode.LeetCode_142_LinkedListCycleII;
 
 // https://leetcode-cn.com/problems/linked-list-cycle-ii/solution/huan-xing-lian-biao-ii-by-leetcode/
 

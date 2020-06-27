@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_142_LinkedListCycleII.LeetCode_141_LinkedListCycle;
+package Algorithm.LeetCode.LeetCode_142_LinkedListCycleII;
 
 import java.util.HashSet;
 import java.util.Set;
