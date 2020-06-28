@@ -48,9 +48,7 @@ class QuickSort {
         nums[i] = nums[j];
         nums[j] = tmp;
     }
-}
 
-class QuickSortMain {
     public static void main(String[] args) {
         QuickSort quickSort = new QuickSort();
 
