@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_98_ValidateBinarySearchTree;
+package Algorithm.LeetCode.LeetCode_98_Validate_Binary_Search_Tree;
 
 public class Solution_Recursion {
     public boolean isValidBST(TreeNode root) {
