@@ -4,16 +4,12 @@ public class Solution_InOrder_Recursion {
     long pre = Long.MIN_VALUE;
 
     public boolean isValidBST(TreeNode root) {
-        return helper(root);
-    }
-
-    private boolean helper(TreeNode root) {
         if (root == null) {
             return true;
         }
 
         // 左
-        if (!helper(root.left)) {
+        if (!isValidBST(root.left)) {
             return false;
         }
 
@@ -25,7 +21,7 @@ public class Solution_InOrder_Recursion {
         pre = root.val;
 
         // 右
-        if (!helper(root.right)) {
+        if (!isValidBST(root.right)) {
             return false;
         }
 
