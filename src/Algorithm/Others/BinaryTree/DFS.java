@@ -2,18 +2,6 @@ package Algorithm.Others.BinaryTree;
 
 // https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 
-class Node
-{
-    int key;
-    Node left, right;
-
-    public Node(int item)
-    {
-        key = item;
-        left = right = null;
-    }
-}
-
 public class DFS
 {
     // Root of Binary Tree
