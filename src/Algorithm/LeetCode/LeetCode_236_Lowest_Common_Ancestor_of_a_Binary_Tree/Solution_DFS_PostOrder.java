@@ -30,4 +30,24 @@ class Solution_DFS_PostOrder {
 
         return root; // 2. if(left != null and right != null)
     }
+
+    public static void main(String[] args) {
+        Solution_DFS_PostOrder foo = new Solution_DFS_PostOrder();
+
+        TreeNode root = new TreeNode(6);
+
+        root.left = new TreeNode(2);
+        root.left.left = new TreeNode(0);
+        root.left.right = new TreeNode(4);
+        root.left.right.left = new TreeNode(3);
+        root.left.right.right = new TreeNode(5);
+
+        root.right = new TreeNode(8);
+        root.right.left = new TreeNode(7);
+        root.right.right = new TreeNode(9);
+
+        System.out.println(foo.lowestCommonAncestor(root, root.left, root.right).val);
+        System.out.println(foo.lowestCommonAncestor(root, root.right.left, root.left.right.right).val);
+        System.out.println(foo.lowestCommonAncestor(root, root.left, root.left.right).val);
+    }
 }

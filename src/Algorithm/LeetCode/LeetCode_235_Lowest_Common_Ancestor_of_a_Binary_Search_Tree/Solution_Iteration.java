@@ -1,27 +1,23 @@
 package Algorithm.LeetCode.LeetCode_235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree;
 
-import Algorithm.Others.BinaryTree.Node;
-
-public class Solution_Recursion {
+public class Solution_Iteration {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
-        int parentVal = root.val;
-        int pVal = p.val;
-        int qVal = q.val;
-
-        if (parentVal > pVal && parentVal > qVal) {
-            return lowestCommonAncestor(root.left, p, q);
+        while (root != null) {
+            if (root.val > p.val && root.val > q.val) {
+                root = root.left;
+            } else if (root.val < p.val && root.val < q.val) {
+                root = root.right;
+            } else {
+                // this includes one of the node is itself
+                return root;
+            }
         }
 
-        if (parentVal < pVal && parentVal < qVal) {
-            return lowestCommonAncestor(root.right, p, q);
-        }
-
-        // this includes one of the node is itself
-        return root;
+        return null;
     }
 
     public static void main(String[] args) {
-        Solution_Recursion foo = new Solution_Recursion();
+        Solution_Iteration foo = new Solution_Iteration();
 
         TreeNode root = new TreeNode(6);
 
