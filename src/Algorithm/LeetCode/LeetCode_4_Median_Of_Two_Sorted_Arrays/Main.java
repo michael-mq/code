@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_04_MedianOfTwoSortedArrays;
+package Algorithm.LeetCode.LeetCode_4_Median_Of_Two_Sorted_Arrays;
 
 class Main {
     public static void main(String[] args) {

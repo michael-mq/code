@@ -1,5 +1,5 @@
 // https://www.youtube.com/watch?v=ScCg9v921ns&t=642s
-package Algorithm.LeetCode.LeetCode_04_MedianOfTwoSortedArrays;
+package Algorithm.LeetCode.LeetCode_4_Median_Of_Two_Sorted_Arrays;
 
 public class BinarySearch1 {
     public double findMedianSortedArrays(int[] A, int[] B) {
