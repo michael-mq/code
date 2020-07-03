@@ -1,11 +1,12 @@
-package Algorithm.LeetCode.LeetCode_104_Maximum_Depth_of_Binary_Tree;
+package Algorithm.LeetCode.LeetCode_111_Minimum_Depth_of_Binary_Tree;
 
-import java.util.ArrayList;
+// https://leetcode-cn.com/problems/minimum-depth-of-binary-tree/solution/java-di-gui-he-fei-di-gui-liang-chong-fang-shi-de-/
+
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class Solution_BFS {
-    public int maxDepth(TreeNode root) {
+    public int minDepth(TreeNode root) {
         if (root == null) {
             return 0;
         }
@@ -23,6 +24,7 @@ public class Solution_BFS {
             for (int i = 0; i < n; i++) {
                 TreeNode node = queue.poll();
 
+                if (node.left == null && node.right == null) return depth;
                 if (node.left != null) queue.add(node.left);
                 if (node.right != null) queue.add(node.right);
             }
@@ -35,10 +37,10 @@ public class Solution_BFS {
         Solution_BFS foo = new Solution_BFS();
 
         TreeNode root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7)));
-        System.out.println(foo.maxDepth(root));
+        System.out.println(foo.minDepth(root));
 
         root = new TreeNode(3, new TreeNode(9), new TreeNode(20, new TreeNode(15), new TreeNode(7, new TreeNode(4), null)));
-        System.out.println(foo.maxDepth(root));
+        System.out.println(foo.minDepth(root));
 
         root = new TreeNode(0);
         root.left = new TreeNode(2);
@@ -50,6 +52,6 @@ public class Solution_BFS {
         root.left.left.right = new TreeNode(1);
         root.right.left.right = new TreeNode(6);
         root.right.right.right = new TreeNode(8);
-        System.out.println(foo.maxDepth(root));
+        System.out.println(foo.minDepth(root));
     }
 }
