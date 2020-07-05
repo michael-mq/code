@@ -16,6 +16,7 @@ public class Solution_better {
                 int num = board[i][j] - '0';
                 int boxIndex = (i / 3) * 3 + j / 3;
 
+                // if (row[i][num] + col[j][num] + box[boxIndex][num] >= 1) {
                 if (row[i][num] == 1 || col[j][num] == 1 || box[boxIndex][num] == 1) {
                     return false;
                 }
