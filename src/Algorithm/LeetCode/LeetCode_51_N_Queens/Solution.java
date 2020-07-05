@@ -4,6 +4,8 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+// https://leetcode.com/problems/n-queens/discuss/19805/My-easy-understanding-Java-Solution/150112
+
 public class Solution {
     public List<List<String>> solveNQueens(int n) {
         List<List<String>> result = new LinkedList<>();
