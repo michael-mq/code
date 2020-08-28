@@ -1,10 +1,11 @@
 package Algorithm.LeetCode.LeetCode_212_Word_Search_II;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class Solution {
+public class Solution implements Serializable {
     public List<String> findWords(char[][] board, String[] words) {
         List<String> result = new ArrayList<>();
         TrieNode root = buildTrie(words);
@@ -16,7 +17,6 @@ public class Solution {
         }
 
         return result;
-
     }
 
     private void dfs(char[][] board, int i, int j, TrieNode p, List<String> res) {
