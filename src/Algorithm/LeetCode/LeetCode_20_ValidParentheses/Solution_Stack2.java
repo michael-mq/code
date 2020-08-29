@@ -1,7 +1,6 @@
 package Algorithm.LeetCode.LeetCode_20_ValidParentheses;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Stack;
 
 public class Solution_Stack2 {

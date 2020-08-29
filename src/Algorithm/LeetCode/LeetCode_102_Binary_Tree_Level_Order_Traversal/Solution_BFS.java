@@ -1,7 +1,5 @@
 package Algorithm.LeetCode.LeetCode_102_Binary_Tree_Level_Order_Traversal;
 
-import Algorithm.LeetCode.LeetCode_142_LinkedListCycleII.ListNode;
-
 import java.util.*;
 
 public class Solution_BFS {

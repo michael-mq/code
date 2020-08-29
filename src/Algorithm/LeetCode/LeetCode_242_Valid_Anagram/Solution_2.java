@@ -1,7 +1,5 @@
 package Algorithm.LeetCode.LeetCode_242_Valid_Anagram;
 
-import java.util.Arrays;
-
 public class Solution_2 {
     public boolean isAnagram(String s, String t) {
         if (s.length() != t.length()) {

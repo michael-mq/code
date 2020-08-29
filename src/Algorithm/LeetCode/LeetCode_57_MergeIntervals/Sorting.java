@@ -1,6 +1,7 @@
 package Algorithm.LeetCode.LeetCode_57_MergeIntervals;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.LinkedList;
 
 public class Sorting {
     public int[][] merge(int[][] intervals) {

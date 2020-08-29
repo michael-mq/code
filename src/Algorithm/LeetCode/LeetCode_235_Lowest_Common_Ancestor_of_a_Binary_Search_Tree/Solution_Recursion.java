@@ -1,7 +1,5 @@
 package Algorithm.LeetCode.LeetCode_235_Lowest_Common_Ancestor_of_a_Binary_Search_Tree;
 
-import Algorithm.Others.BinaryTree.Node;
-
 public class Solution_Recursion {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (root.val > p.val && root.val > q.val) {

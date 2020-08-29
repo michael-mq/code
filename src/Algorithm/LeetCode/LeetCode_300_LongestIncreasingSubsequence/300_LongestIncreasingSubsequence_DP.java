@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_300_LongestIncreasingSubsequence;
 
-import java.util.*;
+import java.util.Arrays;
 
 class LongestIncreasingSubsequence_DP {
     public int lengthOfLIS(int[] nums) {

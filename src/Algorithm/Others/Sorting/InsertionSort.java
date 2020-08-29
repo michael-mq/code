@@ -1,6 +1,6 @@
 package Algorithm.Others.Sorting;
 
-import java.util.*;
+import java.util.Arrays;
 
 class InsertionSort {
     int[] sort(int[] nums) {

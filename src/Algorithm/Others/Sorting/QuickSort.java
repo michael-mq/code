@@ -1,6 +1,7 @@
 package Algorithm.Others.Sorting;
 
-import java.util.*;
+import java.util.Arrays;
+import java.util.Random;
 
 class QuickSort {
     int[] sort(int[] nums) {

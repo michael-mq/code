@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_91_DecodeWays;
 
-import java.util.*;
+import java.util.HashMap;
 
 class DecodeWaysRecursion2Memo {
     public int numDecodings(String s) {

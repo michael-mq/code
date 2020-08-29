@@ -1,6 +1,5 @@
 package Algorithm.LeetCode.LeetCode_104_Maximum_Depth_of_Binary_Tree;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 

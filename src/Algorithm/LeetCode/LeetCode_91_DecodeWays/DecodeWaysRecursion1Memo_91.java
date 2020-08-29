@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_91_DecodeWays;//https://leetcode-cn.com/problems/decode-ways/solution/xiang-xi-tong-su-de-si-lu-fen-xi-duo-jie-fa-by-2-3/
 
-import java.util.*;
+import java.util.HashMap;
 
 class DecodeWaysRecursion1Memo {
     public int numDecodings(String s) {

@@ -1,7 +1,5 @@
 package Algorithm.LeetCode.LeetCode_242_Valid_Anagram;
 
-import Algorithm.LeetCode.LeetCode_239_Sliding_Window_Maximum.Solution_Deque;
-
 import java.util.Arrays;
 
 public class Solution_1 {

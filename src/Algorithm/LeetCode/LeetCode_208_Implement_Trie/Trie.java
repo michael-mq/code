@@ -1,7 +1,5 @@
 package Algorithm.LeetCode.LeetCode_208_Implement_Trie;
 
-import Algorithm.LeetCode.LeetCode_111_Minimum_Depth_of_Binary_Tree.TreeNode;
-
 /**
  * Your Trie object will be instantiated and called as such:
  * Trie obj = new Trie();

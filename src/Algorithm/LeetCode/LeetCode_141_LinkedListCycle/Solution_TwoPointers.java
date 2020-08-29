@@ -1,8 +1,5 @@
 package Algorithm.LeetCode.LeetCode_141_LinkedListCycle;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Solution_TwoPointers {
     public boolean hasCycle(ListNode head) {
 //        if (head == null || head.next == null) {

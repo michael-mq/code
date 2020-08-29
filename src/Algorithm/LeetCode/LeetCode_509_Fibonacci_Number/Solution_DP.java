@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_509_Fibonacci_Number;
 
-public class Solution {
+public class Solution_DP {
     public int fib(int N) {
         if (N < 2) return N;
 
@@ -17,7 +17,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution foo = new Solution();
+        Solution_DP foo = new Solution_DP();
 
         System.out.println(foo.fib(2));
         System.out.println(foo.fib(3));

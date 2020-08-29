@@ -1,6 +1,7 @@
 package Algorithm.LeetCode.LeetCode_3_Longest_Substring_WIthout_Repeating_Characters;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SlidingWindowExtended {
     public int lengthOfLongestSubstring(String s) {
