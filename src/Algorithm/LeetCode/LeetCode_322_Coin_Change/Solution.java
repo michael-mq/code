@@ -18,7 +18,6 @@ public class Solution {
         }
 
         return dp[amount] == amount + 1 ? -1 : dp[amount];
-
     }
 
     public static void main(String[] args) {
