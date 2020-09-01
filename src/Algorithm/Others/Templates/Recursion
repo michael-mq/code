@@ -1,0 +1,17 @@
+recursion(level, x1, x2, ...) {
+
+    // recursion terminator
+    if (level > MAX_LEVEL) {
+        print_result();
+        return;
+    }
+
+    // process logic in current level
+    process_data(level, data, ...);
+
+    // drill down
+    recursion(level + 1, y1, y2, ...);
+
+    // reverse the current level status if needed
+    reverse_state(level);
+}
