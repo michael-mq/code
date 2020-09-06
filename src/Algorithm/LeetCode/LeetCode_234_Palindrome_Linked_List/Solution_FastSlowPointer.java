@@ -1,35 +1,62 @@
 package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
-import java.util.Stack;
-
-public class Solution_Stack {
+public class Solution_FastSlowPointer {
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;
         }
 
-        Stack<Integer> stack = new Stack<Integer>();
+        // Find the end of first half and reverse second half.
+        ListNode firstHalfEnd = endOfFirstHalf(head);
+        ListNode secondHalfStart = reverseList(firstHalfEnd.next);
 
-        ListNode current = head;
+        // Check whether or not there is a palindrome.
+        ListNode p1 = head;
+        ListNode p2 = secondHalfStart;
 
-        while (current != null) {
-            stack.push(current.val);
-            current = current.next;
+        // p1.length > p2.length
+
+        while (p2 != null) {
+            if (p1.val != p2.val) return false;
+            p1 = p1.next;
+            p2 = p2.next;
         }
 
-        while (!stack.isEmpty()) {
-            if (!stack.pop().equals(head.val)) {
-                return false;
-            }
-
-            head = head.next;
-        }
+        // Restore the list and return the result.
+        firstHalfEnd.next = reverseList(secondHalfStart);
 
         return true;
     }
 
+    // Taken from https://leetcode.com/problems/reverse-linked-list/solution/
+    private ListNode reverseList(ListNode head) {
+        ListNode prev = null;
+        ListNode curr = head;
+
+        while (curr != null) {
+            ListNode nextTemp = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = nextTemp;
+        }
+
+        return prev;
+    }
+
+    private ListNode endOfFirstHalf(ListNode head) {
+        ListNode fast = head;
+        ListNode slow = head;
+
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow;
+    }
+
     public static void main(String[] args) {
-        Solution_Stack solutionStack = new Solution_Stack();
+        Solution_FastSlowPointer solutionStack = new Solution_FastSlowPointer();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));

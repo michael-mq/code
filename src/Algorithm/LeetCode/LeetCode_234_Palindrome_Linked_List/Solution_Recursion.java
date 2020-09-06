@@ -1,41 +1,32 @@
 package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
-import java.util.ArrayList;
+public class Solution_Recursion {
+    private ListNode frontPointer;
 
-public class Solution_ArrayList1 {
     public boolean isPalindrome(ListNode head) {
-        if (head == null || head.next == null) {
-            return true;
-        }
+        frontPointer = head;
 
-        ArrayList<Integer> array = new ArrayList<>();
+        return recursivelyCheck(head);
+    }
 
-        ListNode next = head;
-
-        while (next != null) {
-            array.add(next.val);
-            next = next.next;
-        }
-
-        int first = 0;
-        int last = array.size() - 1;
-
-        // Note that we must use ! .equals instead of !=
-        // because we are comparing Integer, not int.
-        while (first < last) {
-            if (!array.get(first).equals(array.get(last))) {
+    private boolean recursivelyCheck(ListNode currentNode) {
+        if (currentNode != null) {
+            if (!recursivelyCheck(currentNode.next)) {
                 return false;
             }
 
-            first++;
-            last--;
+            if (currentNode.val != frontPointer.val) {
+                return false;
+            }
+
+            frontPointer = frontPointer.next;
         }
 
         return true;
     }
 
     public static void main(String[] args) {
-        Solution_ArrayList1 solutionStack = new Solution_ArrayList1();
+        Solution_Recursion solutionStack = new Solution_Recursion();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));

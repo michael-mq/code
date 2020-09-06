@@ -1,31 +1,35 @@
 package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
-public class Solution_Recursion {
-    private ListNode frontPointer;
+import java.util.Stack;
 
+public class Solution_Stack {
     public boolean isPalindrome(ListNode head) {
-        frontPointer = head;
-
-        return recursivelyCheck(head);
-    }
-
-    private boolean recursivelyCheck(ListNode currentNode) {
-        if (currentNode != null) {
-            if (!recursivelyCheck(currentNode.next)) {
-                return false;
-            }
-
-            if (currentNode.val != frontPointer.val) {
-                return false;
-            }
-
-            frontPointer = frontPointer.next;
+        if (head == null || head.next == null) {
+            return true;
         }
+
+        Stack<Integer> stack = new Stack<Integer>();
+
+        ListNode current = head;
+
+        while (current != null) {
+            stack.push(current.val);
+            current = current.next;
+        }
+
+        while (!stack.isEmpty()) {
+            if (!stack.pop().equals(head.val)) {
+                return false;
+            }
+
+            head = head.next;
+        }
+
         return true;
     }
 
     public static void main(String[] args) {
-        Solution_Recursion solutionStack = new Solution_Recursion();
+        Solution_Stack solutionStack = new Solution_Stack();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));

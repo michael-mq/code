@@ -1,14 +1,26 @@
 // IMPORTANT: Do not use `stack.peek() == minStack.peek()`, it will return false when both are -1024
+// BECAUSE: stack.peek() return `Integer` instead of `int`. For Integer = -1024, integerA == integerB will return false wile integerA.equal(integerB) == true
 // alternatively you can do:
 
-int foo = stack.peek();
-int bar = minStack.peek();
-if (foo == bar)
+int foo = stack.peek(); // Convert Integer to int
+int bar = minStack.peek();  // Convert Integer to int
+if (foo == bar) ...
 
-// or
+// OR
 
-if (stack.peek().equals(minStack.peek()))
+if (stack.peek().equals(minStack.peek())) ...
 
+// Note that we must use ! .equals instead of !=
+// because we are comparing Integer, not int.
+
+// Try to run:
+int foo = -1024;
+int bar = -1024;
+System.out.println(foo == bar); // true
+
+Integer foo1 = -1024;
+Integer bar1 = -1024;
+System.out.println(foo1 == bar1); // false
 
 -------------------------------
 

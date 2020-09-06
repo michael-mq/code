@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_206_Reversed_Linked_List;
+package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
 public class ListNode {
     int val;

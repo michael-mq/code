@@ -1,35 +1,39 @@
 package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
-import java.util.Stack;
+import java.util.ArrayList;
 
-public class Solution_Stack {
+public class Solution_ArrayList {
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;
         }
 
-        Stack<ListNode> stack = new Stack<>();
+        ArrayList<ListNode> array = new ArrayList<>();
 
-        stack.push(head);
-
-        ListNode next = head.next;
+        ListNode next = head;
 
         while (next != null) {
-            int val = stack.peek().val;
-            if (next.val != val) {
-                stack.push(next);
-            } else {
-                stack.pop();
-            }
-
+            array.add(next);
             next = next.next;
         }
 
-        return stack.isEmpty();
+        int first = 0;
+        int last = array.size() - 1;
+
+        while (first < last) {
+            if (array.get(first).val != array.get(last).val) {
+                return false;
+            }
+
+            first ++;
+            last --;
+        }
+
+        return true;
     }
 
     public static void main(String[] args) {
-        Solution_Stack solutionStack = new Solution_Stack();
+        Solution_ArrayList solutionStack = new Solution_ArrayList();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));

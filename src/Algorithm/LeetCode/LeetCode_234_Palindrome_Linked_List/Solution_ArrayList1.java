@@ -2,7 +2,7 @@ package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
 import java.util.ArrayList;
 
-public class Solution_ArrayList {
+public class Solution_ArrayList1 {
     public boolean isPalindrome(ListNode head) {
         if (head == null || head.next == null) {
             return true;
@@ -20,6 +20,8 @@ public class Solution_ArrayList {
         int first = 0;
         int last = array.size() - 1;
 
+        // Note that we must use ! .equals instead of !=
+        // because we are comparing Integer, not int.
         while (first < last) {
             if (!array.get(first).equals(array.get(last))) {
                 return false;
@@ -33,7 +35,7 @@ public class Solution_ArrayList {
     }
 
     public static void main(String[] args) {
-        Solution_ArrayList solutionStack = new Solution_ArrayList();
+        Solution_ArrayList1 solutionStack = new Solution_ArrayList1();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));
@@ -49,6 +51,5 @@ public class Solution_ArrayList {
 
         head = new ListNode(1, new ListNode(0, new ListNode(1)));
         System.out.println(solutionStack.isPalindrome(head));
-
     }
 }
