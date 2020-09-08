@@ -2,6 +2,8 @@ package Algorithm.Others.BinaryTree;
 
 // https://www.geeksforgeeks.org/tree-traversals-inorder-preorder-and-postorder/
 
+import java.util.Stack;
+
 public class DFS
 {
     // Root of Binary Tree
@@ -12,41 +14,9 @@ public class DFS
         root = null;
     }
 
-    /* Given a binary tree, print its nodes according to the
-    "bottom-up" postorder traversal. */
-    void printPostorder(Node node)
-    {
-        if (node == null)
-            return;
-
-        // first recur on left subtree
-        printPostorder(node.left);
-
-        // then recur on right subtree
-        printPostorder(node.right);
-
-        // now deal with the node
-        System.out.print(node.key + " ");
-    }
-
-    /* Given a binary tree, print its nodes in inorder*/
-    void printInorder(Node node)
-    {
-        if (node == null)
-            return;
-
-        /* first recur on left child */
-        printInorder(node.left);
-
-        /* then print the data of node */
-        System.out.print(node.key + " ");
-
-        /* now recur on right child */
-        printInorder(node.right);
-    }
-
     /* Given a binary tree, print its nodes in preorder*/
-    void printPreorder(Node node)
+
+    void printPreOrder(Node node)
     {
         if (node == null)
             return;
@@ -55,16 +25,133 @@ public class DFS
         System.out.print(node.key + " ");
 
         /* then recur on left sutree */
-        printPreorder(node.left);
+        printPreOrder(node.left);
 
         /* now recur on right subtree */
-        printPreorder(node.right);
+        printPreOrder(node.right);
+    }
+
+    void printPreOrder_stack(Node node)
+    {
+        if (node == null)
+            return;
+
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(root);
+
+        while(!stack.isEmpty()) {
+            Node current = stack.pop();
+            System.out.print(current.key + " ");
+
+            if(current.right != null) {
+                stack.push(current.right);
+            }
+            if(current.left != null) {
+                stack.push(current.left);
+            }
+        }
+    }
+
+    /* Given a binary tree, print its nodes in inorder*/
+    void printInOrder(Node node)
+    {
+        if (node == null)
+            return;
+
+        /* first recur on left child */
+        printInOrder(node.left);
+
+        /* then print the data of node */
+        System.out.print(node.key + " ");
+
+        /* now recur on right child */
+        printInOrder(node.right);
+    }
+
+    void printInOrder_stack(Node node)
+    {
+        if (node == null)
+            return;
+
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(root);
+
+        Node current = root;
+        while(!stack.isEmpty()) {
+            while (current.left != null) {
+                stack.push(current.left);
+                current = current.left;
+            }
+
+            current = stack.pop();
+            System.out.print(current.key + " ");
+
+            if(current.right != null) {
+                stack.push(current.right);
+                current = current.right;
+            }
+
+        }
+    }
+
+    /* Given a binary tree, print its nodes according to the
+"bottom-up" postorder traversal. */
+    void printPostOrder(Node node)
+    {
+        if (node == null)
+            return;
+
+        // first recur on left subtree
+        printPostOrder(node.left);
+
+        // then recur on right subtree
+        printPostOrder(node.right);
+
+        // now deal with the node
+        System.out.print(node.key + " ");
+    }
+
+    void printPostOrder_stack(Node node)
+    {
+        if (node == null)
+            return;
+
+        Stack<Node> stack = new Stack<Node>();
+        stack.push(root);
+
+        Node prev = root;
+        Node current = root;
+
+        while (!stack.isEmpty()) {
+            current = stack.peek();
+
+            boolean hasChild = (current.left != null || current.right != null);
+
+            boolean isPrevLastChild = (prev == current.right ||
+                    (prev == current.left && current.right == null));
+
+            if (!hasChild || isPrevLastChild) {
+                current = stack.pop();
+                System.out.print(current.key + " ");
+                prev = current;
+            } else {
+                if (current.right != null) {
+                    stack.push(current.right);
+                }
+                if (current.left != null) {
+                    stack.push(current.left);
+                }
+            }
+        }
     }
 
     // Wrappers over above recursive functions
-    void printPostorder() {	 printPostorder(root); }
-    void printInorder() {	 printInorder(root); }
-    void printPreorder() {	 printPreorder(root); }
+    void printPreOrder() {	 printPreOrder(root); }
+    void printPreOrder_stack() {	 printPreOrder_stack(root); }
+    void printInOrder() {	 printInOrder(root); }
+    void printInOrder_stack() {	 printInOrder_stack(root); }
+    void printPostOrder() {	 printPostOrder(root); }
+    void printPostOrder_stack() {	 printPostOrder_stack(root); }
 
     // Driver method
     public static void main(String[] args)
@@ -77,13 +164,19 @@ public class DFS
         tree.root.left.right = new Node(5);
 
         System.out.println("Preorder traversal of binary tree is ");
-        tree.printPreorder();
+        tree.printPreOrder();
+        System.out.println();
+        tree.printPreOrder_stack();
 
         System.out.println("\nInorder traversal of binary tree is ");
-        tree.printInorder();
+        tree.printInOrder();
+        System.out.println();
+        tree.printInOrder_stack();
 
         System.out.println("\nPostorder traversal of binary tree is ");
-        tree.printPostorder();
+        tree.printPostOrder();
+        System.out.println();
+        tree.printPostOrder_stack();
     }
 }
 
