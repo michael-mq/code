@@ -9,6 +9,9 @@ public class Solution {
             int mid = left + (right - left) / 2;
 
             if (isBadVersion(mid)) {
+                // because when we have found bad version
+                // we have to include it
+                // it might be the first one
                 right = mid;
             } else {
                 left = mid + 1;
