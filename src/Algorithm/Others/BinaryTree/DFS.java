@@ -70,27 +70,26 @@ public class DFS
 
     void printInOrder_stack(Node node)
     {
-        if (node == null)
+        if (root == null)
             return;
 
-        Stack<Node> stack = new Stack<Node>();
-        stack.push(root);
+        Stack<Node> s = new Stack<Node>();
 
-        Node current = root;
-        while(!stack.isEmpty()) {
-            while (current.left != null) {
-                stack.push(current.left);
-                current = current.left;
+        Node curr = root;
+
+        while (curr != null || s.size() > 0)
+        {
+            while (curr !=  null)
+            {
+                s.push(curr);
+                curr = curr.left;
             }
 
-            current = stack.pop();
-            System.out.print(current.key + " ");
+            curr = s.pop();
 
-            if(current.right != null) {
-                stack.push(current.right);
-                current = current.right;
-            }
+            System.out.print(curr.key + " ");
 
+            curr = curr.right;
         }
     }
 
@@ -162,6 +161,31 @@ public class DFS
         tree.root.right = new Node(3);
         tree.root.left.left = new Node(4);
         tree.root.left.right = new Node(5);
+
+        System.out.println("Preorder traversal of binary tree is ");
+        tree.printPreOrder();
+        System.out.println();
+        tree.printPreOrder_stack();
+
+        System.out.println("\nInorder traversal of binary tree is ");
+        tree.printInOrder();
+        System.out.println();
+        tree.printInOrder_stack();
+
+        System.out.println("\nPostorder traversal of binary tree is ");
+        tree.printPostOrder();
+        System.out.println();
+        tree.printPostOrder_stack();
+
+        System.out.println();
+        System.out.println();
+
+        tree.root = new Node(5);
+        tree.root.left = new Node(3);
+        tree.root.right = new Node(6);
+        tree.root.left.left = new Node(2);
+        tree.root.left.right = new Node(4);
+        tree.root.left.left.left = new Node(1);
 
         System.out.println("Preorder traversal of binary tree is ");
         tree.printPreOrder();
