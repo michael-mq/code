@@ -29,9 +29,9 @@ class MinStack {
         // IMPORTANT: Do not use `stack.peek() == minStack.peek()`, it will return false when both are -1024
         // alternatively you can do:
 
-        // int foo = stack.peek();
+        // int Miscs = stack.peek();
         // int bar = minStack.peek();
-        // if (foo == bar) {
+        // if (Miscs == bar) {
         // or
         // if (stack.peek().equals(minStack.peek())) {
         if (stack.peek().equals(minStack.peek())) {

@@ -41,8 +41,8 @@ public class KthLargest {
         System.out.println(kthLargest.add(9));   // returns 8
         System.out.println(kthLargest.add(4));   // returns 8
 
-//        PriorityQueue<Integer> foo = new PriorityQueue<>(3);
-//        System.out.println(foo.size());
+//        PriorityQueue<Integer> Miscs = new PriorityQueue<>(3);
+//        System.out.println(Miscs.size());
     }
 }
 

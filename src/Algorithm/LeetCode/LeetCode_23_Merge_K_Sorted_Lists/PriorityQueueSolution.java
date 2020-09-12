@@ -41,7 +41,7 @@ public class PriorityQueueSolution {
 
 /*
     public static void main(String[] args) {
-        PriorityQueueSolution foo = new PriorityQueueSolution();
+        PriorityQueueSolution Miscs = new PriorityQueueSolution();
 
     }
 */

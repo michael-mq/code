@@ -1,0 +1,24 @@
+int[][] array = new int[2][];
+array[0] = new int[1];
+array[1] new int[2];
+
+Iterable (Interface)
+    - Collection (Interface)
+        - Set (Interface)
+            HashSet - doesn't maintain order
+            LinkedHashSet - use LinkedHashMap - maintain insertion order
+            TreeSet - use TreeMap - order element to supplied Comparator, or natrual order
+
+        - List (Interface)
+            ArrayList
+            Vector
+            LinkedList
+
+        - Queue (Interface)
+            LinkedList
+            PriorityQueue
+
+            - Dequeue (Interface)
+                LinkedList
+                ArrayQueue
+

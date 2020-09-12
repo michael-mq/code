@@ -39,8 +39,8 @@ class LongestPalindromicSubsequenceDPMain_516 {
     public static void main(String[] args) {
         LongestPalindromicSubsequenceDP_516 foo = new LongestPalindromicSubsequenceDP_516();
 
-//        System.out.println(foo.longestPalindromeSubseq("bbbab"));
-//        System.out.println(foo.longestPalindromeSubseq("cbbd"));
+//        System.out.println(Miscs.longestPalindromeSubseq("bbbab"));
+//        System.out.println(Miscs.longestPalindromeSubseq("cbbd"));
         System.out.println(foo.longestPalindromeSubseq("babcbab"));
     }
 }
