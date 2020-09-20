@@ -10,22 +10,16 @@ class Solution_UnionFind {
         int id = 0;
 
         for (List<String> account : accounts) {
-            String name = "";
+            String name = account.get(0);
 
-            for (String email : account) {
-                // the first email is the name
-                if (name == "") {
-                    name = email;
-                    continue;
+            for (int i = 1; i < account.size(); i++){
+                emailToName.put(account.get(i), name);
+
+                if (!emailToID.containsKey(account.get(i))) {
+                    emailToID.put(account.get(i), id++);
                 }
 
-                emailToName.put(email, name);
-
-                if (!emailToID.containsKey(email)) {
-                    emailToID.put(email, id++);
-                }
-
-                dsu.union(emailToID.get(account.get(1)), emailToID.get(email));
+                dsu.union(emailToID.get(account.get(1)), emailToID.get(account.get(i)));
             }
         }
 
