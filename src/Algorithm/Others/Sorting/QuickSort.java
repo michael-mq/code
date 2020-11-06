@@ -22,25 +22,31 @@ class QuickSort {
         int randIndex = randRange(lo, hi);
 
         // Move randomly picked pivot to the end
+        // So nums[hi] becomes the previous nums[randIndex]
         swap(nums, randIndex, hi);
 
-        int i, j;
+        // Real partition starts
+        int pivot = nums[hi];
+        int i = lo;
+        int j;
 
-        for (i = lo, j = lo; j < hi; j++) {
-            if (nums[j] <= nums[hi]) {
+        for (j = lo; j < hi; j++) {
+            if (nums[j] <= pivot) {
                 swap(nums, i, j);
                 i++;
             }
         }
 
+        // now `j == hi` which is the index of the pivot
+        // then move the pivot to index `i` which is the 1st element larger than pivot
+        // so `nums[i] == pivot` while `nums[0 .. i - 1 ] <= pivot`, `nums[i .. hi - 1] > pivot`, `nums[hi] = pivot`
         swap(nums, i, j);
-
+        // now `nums[i] == pivot` while `nums[0 .. i - 1] <= pivot`, `nums[i] = pivot`, numbs[i + 1 .. hi] > pivot
         return i;
     }
 
     int randRange(int lo, int hi) {
-        Random random_num = new Random();
-        return lo + random_num.nextInt(hi - lo);
+        return lo + new Random().nextInt(hi - lo);
     }
 
     void swap(int[] nums, int i, int j) {

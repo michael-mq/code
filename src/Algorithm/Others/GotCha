@@ -2,9 +2,9 @@
 // BECAUSE: stack.peek() return `Integer` instead of `int`. For Integer = -1024, integerA == integerB will return false wile integerA.equal(integerB) == true
 // alternatively you can do:
 
-int foo = stack.peek(); // Convert Integer to int
+int collectorGroupingBy = stack.peek(); // Convert Integer to int
 int bar = minStack.peek();  // Convert Integer to int
-if (foo == bar) ...
+if (collectorGroupingBy == bar) ...
 
 // OR
 
@@ -14,9 +14,9 @@ if (stack.peek().equals(minStack.peek())) ...
 // because we are comparing Integer, not int.
 
 // Try to run:
-int foo = -1024;
+int collectorGroupingBy = -1024;
 int bar = -1024;
-System.out.println(foo == bar); // true
+System.out.println(collectorGroupingBy == bar); // true
 
 Integer foo1 = -1024;
 Integer bar1 = -1024;
