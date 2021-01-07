@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_227_Basic_Calculator_II;
+package Algorithm.LeetCode.LeetCode_224_Basic_Calculator;
 
 import java.util.Stack;
 
@@ -61,5 +61,11 @@ public class Solution {
         }
 
         return res;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        System.out.println(solution.calculate("(1+(4+5+2)-3)+(6+8)"));
     }
 }
