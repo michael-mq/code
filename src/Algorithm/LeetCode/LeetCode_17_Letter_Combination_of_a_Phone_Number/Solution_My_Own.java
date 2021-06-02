@@ -2,7 +2,7 @@ package Algorithm.LeetCode.LeetCode_17_Letter_Combination_of_a_Phone_Number;
 
 import java.util.*;
 
-class Solution {
+class Solution_My_Own {
     public List<String> letterCombinations(String digits) {
         if (digits.length() == 0) {
             return new ArrayList<>();
