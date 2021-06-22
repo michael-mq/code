@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_LeetCode_162_Find_Peak_Element;
+package Algorithm.LeetCode.LeetCode_162_Find_Peak_Element;
 
 public class Solution1 {
     public int findPeakElement(int[] nums) {
