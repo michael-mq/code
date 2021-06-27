@@ -5,6 +5,7 @@ package Algorithm.LeetCode.LeetCode_36_Valid_Sudoku;
 public class Solution_better {
     public boolean isValidSudoku(char[][] board) {
         // the 2nd level of array has 10 element because the max number is 9 as index meaning 10th element
+        // row[x][0] is always empty because there is no number 0
         int[][] row = new int[9][10];
         int[][] col = new int[9][10];
         int[][] box = new int[9][10];
