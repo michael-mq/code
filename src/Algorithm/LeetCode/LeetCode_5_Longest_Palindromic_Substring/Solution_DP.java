@@ -22,15 +22,7 @@ public class Solution_DP {
 
         for (int j = 1; j < len; j++) {
             for (int i = 0; i < j; i++) {
-                if (s.charAt(i) == s.charAt(j)) {
-                    if (j - i < 3) {
-                        dp[i][j] = true;
-                    } else {
-                        dp[i][j] = dp[i + 1][j - 1];
-                    }
-                } else {
-                    dp[i][j] = false;
-                }
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
 
                 if (dp[i][j] && j - i + 1 > maxLen) {
                     maxLen = j - i + 1;
@@ -45,7 +37,8 @@ public class Solution_DP {
     public static void main(String[] args) {
         Solution_DP solution_dp = new Solution_DP();
 
-        System.out.println(solution_dp.longestPalindrome("babad"));
-        System.out.println(solution_dp.longestPalindrome("cbbd"));
+//        System.out.println(solution_dp.longestPalindrome("babad"));
+//        System.out.println(solution_dp.longestPalindrome("cbbd"));
+        System.out.println(solution_dp.longestPalindrome("aaaa"));
     }
 }
