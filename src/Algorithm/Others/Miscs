@@ -7,7 +7,7 @@ Iterable (Interface)
         - Set (Interface)
             HashSet - doesn't maintain order
             LinkedHashSet - use LinkedHashMap - maintain insertion order
-            TreeSet - use TreeMap - order element to supplied Comparator, or natrual order
+            TreeSet - use TreeMap - order element to supplied Comparator, or natural order
 
         - List (Interface)
             ArrayList
