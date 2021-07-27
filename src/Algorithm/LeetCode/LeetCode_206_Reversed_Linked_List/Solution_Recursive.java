@@ -2,6 +2,7 @@ package Algorithm.LeetCode.LeetCode_206_Reversed_Linked_List;
 // 输入: 1->2->3->4->5->NULL
 // 输出: 5->4->3->2->1->NULL
 // https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/
+// https://labuladong.gitbook.io/algo/mu-lu-ye-1/mu-lu-ye/di-gui-fan-zhuan-lian-biao-de-yi-bu-fen
 
 public class Solution_Recursive {
     public ListNode reverseList(ListNode head) {

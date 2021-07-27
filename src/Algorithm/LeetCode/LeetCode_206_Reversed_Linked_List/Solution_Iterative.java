@@ -4,19 +4,6 @@ package Algorithm.LeetCode.LeetCode_206_Reversed_Linked_List;
 // https://leetcode-cn.com/problems/reverse-linked-list/solution/dong-hua-yan-shi-206-fan-zhuan-lian-biao-by-user74/
 
 public class Solution_Iterative {
-//    public ListNode reverseList(ListNode head) {
-//        ListNode curr = null;
-//
-//        while (head != null) {
-//            ListNode temp = head.next;
-//            head.next = curr;
-//            curr = head;
-//            head = temp;
-//        }
-//
-//        return curr;
-//    }
-
     public ListNode reverseList(ListNode head) {
         ListNode prev = null;
         ListNode curr = head;
