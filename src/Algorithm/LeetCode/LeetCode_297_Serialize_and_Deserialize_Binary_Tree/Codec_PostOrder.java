@@ -4,17 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-
-    TreeNode(int x) {
-        val = x;
-    }
-}
-
-public class Codec {
+public class Codec_PostOrder {
     // Encodes a tree to a single string.
     public String serialize(TreeNode root) {
         StringBuilder sb = new StringBuilder();
@@ -29,12 +19,12 @@ public class Codec {
             return;
         }
 
-        /****** 前序遍历位置 ******/
-        sb.append(root.val).append(",");
-        /***********************/
-
         serialize(root.left, sb);
         serialize(root.right, sb);
+
+        /****** 后序遍历位置 ******/
+        sb.append(root.val).append(",");
+        /***********************/
     }
 
     // Decodes your encoded data to tree.
@@ -48,9 +38,9 @@ public class Codec {
         if (nodes.isEmpty())
             return null;
 
-        /****** 前序遍历位置 ******/
+        /****** 后序遍历位置 ******/
         // 列表最左侧就是根节点
-        String val = nodes.remove(0);
+        String val = nodes.remove(nodes.size() - 1);
 
         if (val.equals("#"))
             return null;
@@ -58,8 +48,8 @@ public class Codec {
         TreeNode root = new TreeNode(Integer.parseInt(val));
         /***********************/
 
-        root.left = deserialize(nodes);
         root.right = deserialize(nodes);
+        root.left = deserialize(nodes);
 
         return root;
     }
