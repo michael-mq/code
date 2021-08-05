@@ -52,9 +52,9 @@ class Codec1 {
     }
 }
 
-// Your Codec object will be instantiated and called as such:
-// Codec ser = new Codec();
-// Codec deser = new Codec();
+// Your Codec.java object will be instantiated and called as such:
+// Codec.java ser = new Codec.java();
+// Codec.java deser = new Codec.java();
 // String tree = ser.serialize(root);
 // TreeNode ans = deser.deserialize(tree);
 // return ans;
