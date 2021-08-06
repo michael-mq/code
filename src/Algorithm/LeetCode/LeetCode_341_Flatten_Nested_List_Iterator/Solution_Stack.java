@@ -1,12 +1,11 @@
 package Algorithm.LeetCode.LeetCode_341_Flatten_Nested_List_Iterator;
 
-import java.util.ArrayDeque;
-import java.util.Deque;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Stack;
 
 public class Solution_Stack implements Iterator<Integer> {
-    Deque<NestedInteger> stack = new ArrayDeque<>();
+    Stack<NestedInteger> stack = new Stack<>();
 
     public Solution_Stack(List<NestedInteger> nestedList) {
         prepareStack(nestedList);

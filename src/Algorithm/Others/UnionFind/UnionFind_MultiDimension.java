@@ -1,11 +1,11 @@
 package Algorithm.Others.UnionFind;
 
-public class UnionFind {
+public class UnionFind_MultiDimension {
     private int count;
     private int[] parent;
     private int[] rank;
 
-    public UnionFind(int n) {
+    public UnionFind_MultiDimension(int n) {
         count = n;
         parent = new int[n];
         rank = new int[n];
@@ -16,7 +16,7 @@ public class UnionFind {
         }
     }
 
-    public UnionFind(char[][] grid) {
+    public UnionFind_MultiDimension(char[][] grid) {
         count = 0;
         int m = grid.length;
         int n = grid[0].length;
