@@ -68,5 +68,4 @@ public class UnionFind_MultiDimension {
     public int getCount() {
         return count;
     }
-
 }

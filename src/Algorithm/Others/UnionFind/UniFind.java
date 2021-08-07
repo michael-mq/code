@@ -47,6 +47,7 @@ public class UniFind {
             parent[x] = parent[parent[x]];
             x = parent[x];
         }
+
         return x;
     }
 
