@@ -16,19 +16,23 @@ class Solution_BFS {
     int index;
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        edges = new ArrayList<List<Integer>>();
+        edges = new ArrayList<>();
+
         for (int i = 0; i < numCourses; ++i) {
-            edges.add(new ArrayList<Integer>());
+            edges.add(new ArrayList<>());
         }
+
         indeg = new int[numCourses];
         result = new int[numCourses];
         index = 0;
+
         for (int[] info : prerequisites) {
             edges.get(info[1]).add(info[0]);
             ++indeg[info[0]];
         }
 
-        Queue<Integer> queue = new LinkedList<Integer>();
+        Queue<Integer> queue = new LinkedList<>();
+
         // 将所有入度为 0 的节点放入队列中
         for (int i = 0; i < numCourses; ++i) {
             if (indeg[i] == 0) {
@@ -41,8 +45,10 @@ class Solution_BFS {
             int u = queue.poll();
             // 放入答案中
             result[index++] = u;
+
             for (int v: edges.get(u)) {
                 --indeg[v];
+
                 // 如果相邻节点 v 的入度为 0，就可以选 v 对应的课程了
                 if (indeg[v] == 0) {
                     queue.offer(v);
@@ -53,6 +59,7 @@ class Solution_BFS {
         if (index != numCourses) {
             return new int[0];
         }
+
         return result;
     }
 }
