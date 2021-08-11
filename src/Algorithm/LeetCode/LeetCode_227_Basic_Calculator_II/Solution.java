@@ -4,31 +4,19 @@ import java.util.Stack;
 
 public class Solution {
     public int calculate(String s) {
-        int[] i = new int[1];
-
-        return dfs(s, i);
-    }
-
-    private int dfs(String s, int[] i) {
         Stack<Integer> stack = new Stack<>();
-
         int num = 0;
-        char op = '+';
+        char preSign = '+';
 
-        for (; i[0] < s.length(); i[0]++) {
-            char ch = s.charAt(i[0]);
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
 
-            if (ch == '(') {
-                i[0]++;
-                num = dfs(s, i);
+            if (Character.isDigit(c)) {
+                num = num * 10 + c - '0';
             }
 
-            if (Character.isDigit(ch)) {
-                num = num * 10 + (ch - '0');
-            }
-
-            if (!Character.isDigit(ch) && ch != ' ' || i[0] == s.length() - 1) {
-                switch (op) {
+            if (!Character.isDigit(c) && c != ' ' || i == s.length() - 1) {
+                switch (preSign) {
                     case '+':
                         stack.push(num);
                         break;
@@ -36,22 +24,17 @@ public class Solution {
                         stack.push(-num);
                         break;
                     case '*':
-                        int pre = stack.pop();
-                        stack.push(pre * num);
+                        stack.push(stack.pop() * num);
                         break;
                     case '/':
-                        pre = stack.pop();
-                        stack.push(pre / num);
+                        stack.push(stack.pop() / num);
                         break;
                 }
 
+                preSign = c;
                 num = 0;
-                op = ch;
             }
 
-            if (ch == ')') {
-                break;
-            }
         }
 
         int res = 0;
