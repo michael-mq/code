@@ -36,20 +36,20 @@ public class Graph {
             if (visited[i] == 1) {
                 continue;
             }
-                visited[i] = 1;
-                queue.add(i);
+            visited[i] = 1;
+            queue.add(i);
 
-                while (!queue.isEmpty()) {
-                    int cur = queue.poll();
-                    System.out.print(cur + " ");
+            while (!queue.isEmpty()) {
+                int cur = queue.poll();
+                System.out.print(cur + " ");
 
-                    for (int j = 0; j < graph.length; j++) {
-                        if (visited[j] != 1 && graph[cur][j] == 1) {
-                            visited[j] = 1;
-                            queue.add(j);
-                        }
+                for (int j = 0; j < graph.length; j++) {
+                    if (visited[j] != 1 && graph[cur][j] == 1) {
+                        visited[j] = 1;
+                        queue.add(j);
                     }
                 }
+            }
 
         }
     }

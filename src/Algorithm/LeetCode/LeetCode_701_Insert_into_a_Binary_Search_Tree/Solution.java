@@ -1,4 +1,4 @@
-package Algorithm.LeetCode_701_Insert_into_a_Binary_Search_Tree;
+package Algorithm.LeetCode.LeetCode_701_Insert_into_a_Binary_Search_Tree;
 
 class TreeNode {
     int val;
