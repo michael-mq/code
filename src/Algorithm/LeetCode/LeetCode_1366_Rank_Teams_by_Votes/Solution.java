@@ -33,6 +33,7 @@ public class Solution {
                 }
             }
 
+            // sort alphabetically
             return team1.getKey() - team2.getKey();
         });
 
