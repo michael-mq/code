@@ -1,11 +1,10 @@
 package Algorithm.LeetCode.LeetCode_101_Symmetric_Tree;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class Solution_Stack {
     public boolean isSymmetric(TreeNode root) {
-        if(root==null || (root.left==null && root.right==null)) {
+        if (root == null || (root.left == null && root.right == null)) {
             return true;
         }
 
@@ -14,17 +13,17 @@ public class Solution_Stack {
         stack.push(root.left);
         stack.push(root.right);
 
-        while(stack.size()>0) {
+        while (stack.size() > 0) {
             TreeNode left = stack.pop();
             TreeNode right = stack.pop();
 
-            if(left==null && right==null) {
+            if (left == null && right == null) {
                 continue;
             }
-            if(left==null || right==null) {
+            if (left == null || right == null) {
                 return false;
             }
-            if(left.val!=right.val) {
+            if (left.val != right.val) {
                 return false;
             }
 

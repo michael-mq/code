@@ -4,20 +4,17 @@ package Algorithm.Others.BinaryTree;
 
 import java.util.Stack;
 
-public class DFS
-{
+public class DFS {
     // Root of Binary Tree
     Node root;
 
-    DFS()
-    {
+    DFS() {
         root = null;
     }
 
     /* Given a binary tree, print its nodes in preorder*/
 
-    void printPreOrder(Node node)
-    {
+    void printPreOrder(Node node) {
         if (node == null)
             return;
 
@@ -31,30 +28,28 @@ public class DFS
         printPreOrder(node.right);
     }
 
-    void printPreOrder_stack(Node node)
-    {
+    void printPreOrder_stack(Node node) {
         if (node == null)
             return;
 
         Stack<Node> stack = new Stack<Node>();
         stack.push(root);
 
-        while(!stack.isEmpty()) {
+        while (!stack.isEmpty()) {
             Node current = stack.pop();
             System.out.print(current.key + " ");
 
-            if(current.right != null) {
+            if (current.right != null) {
                 stack.push(current.right);
             }
-            if(current.left != null) {
+            if (current.left != null) {
                 stack.push(current.left);
             }
         }
     }
 
     /* Given a binary tree, print its nodes in inorder*/
-    void printInOrder(Node node)
-    {
+    void printInOrder(Node node) {
         if (node == null)
             return;
 
@@ -68,8 +63,7 @@ public class DFS
         printInOrder(node.right);
     }
 
-    void printInOrder_stack(Node node)
-    {
+    void printInOrder_stack(Node node) {
         if (root == null)
             return;
 
@@ -77,10 +71,8 @@ public class DFS
 
         Node curr = root;
 
-        while (curr != null || s.size() > 0)
-        {
-            while (curr !=  null)
-            {
+        while (curr != null || s.size() > 0) {
+            while (curr != null) {
                 s.push(curr);
                 curr = curr.left;
             }
@@ -95,8 +87,7 @@ public class DFS
 
     /* Given a binary tree, print its nodes according to the
 "bottom-up" postorder traversal. */
-    void printPostOrder(Node node)
-    {
+    void printPostOrder(Node node) {
         if (node == null)
             return;
 
@@ -110,8 +101,7 @@ public class DFS
         System.out.print(node.key + " ");
     }
 
-    void printPostOrder_stack(Node node)
-    {
+    void printPostOrder_stack(Node node) {
         if (node == null)
             return;
 
@@ -145,16 +135,32 @@ public class DFS
     }
 
     // Wrappers over above recursive functions
-    void printPreOrder() {	 printPreOrder(root); }
-    void printPreOrder_stack() {	 printPreOrder_stack(root); }
-    void printInOrder() {	 printInOrder(root); }
-    void printInOrder_stack() {	 printInOrder_stack(root); }
-    void printPostOrder() {	 printPostOrder(root); }
-    void printPostOrder_stack() {	 printPostOrder_stack(root); }
+    void printPreOrder() {
+        printPreOrder(root);
+    }
+
+    void printPreOrder_stack() {
+        printPreOrder_stack(root);
+    }
+
+    void printInOrder() {
+        printInOrder(root);
+    }
+
+    void printInOrder_stack() {
+        printInOrder_stack(root);
+    }
+
+    void printPostOrder() {
+        printPostOrder(root);
+    }
+
+    void printPostOrder_stack() {
+        printPostOrder_stack(root);
+    }
 
     // Driver method
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         DFS tree = new DFS();
         tree.root = new Node(1);
         tree.root.left = new Node(2);
@@ -203,4 +209,3 @@ public class DFS
         tree.printPostOrder_stack();
     }
 }
-
