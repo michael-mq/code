@@ -8,11 +8,14 @@ public class Graph {
     void dfsTraversing(int[][] graph) {
         int[] visited = new int[graph.length];
 
-        for (int i = 0; i < graph.length; i++) {
-            if (visited[i] == 0) {// 当前顶点没有被访问
-                dfsHelper(i, graph, visited);
-            }
-        }
+//        for (int i = 0; i < graph.length; i++) {
+//            if (visited[i] == 0) {// 当前顶点没有被访问
+//                dfsHelper(i, graph, visited);
+//            }
+//        }
+
+        // or
+        dfsHelper(0, graph, visited);
     }
 
     void dfsHelper(int i, int[][] graph, int[] visited) {
