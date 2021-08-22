@@ -1,6 +1,7 @@
 package Algorithm.LeetCode.LeetCode_31_Next_Permutation;
 
-public class Solution {
+// https://leetcode-cn.com/problems/next-permutation/solution/xia-yi-ge-pai-lie-by-leetcode-solution/
+class Solution {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
         while (i >= 0 && nums[i + 1] <= nums[i]) {
