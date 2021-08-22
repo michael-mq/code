@@ -1,6 +1,6 @@
 // https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-m-2/
 
-package Algorithm.LeetCode.LeetCode_31_Combination_Sum;
+package Algorithm.LeetCode.LeetCode_39_Combination_Sum;
 
 import java.util.*;
 

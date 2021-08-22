@@ -1,6 +1,6 @@
 // https://leetcode-cn.com/problems/combination-sum/solution/hui-su-suan-fa-tao-mo-ban-ji-ke-by-jeromememory/
 
-package Algorithm.LeetCode.LeetCode_31_Combination_Sum;
+package Algorithm.LeetCode.LeetCode_39_Combination_Sum;
 
 import java.util.Arrays;
 import java.util.LinkedList;
