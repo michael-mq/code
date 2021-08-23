@@ -2,6 +2,7 @@ package Algorithm.LeetCode.LeetCode_528_Random_Pick_with_Weight;
 
 import java.util.Random;
 
+//https://www.youtube.com/watch?v=fWS0TCcr-lE
 class Solution {
     private int sum = 0;
     private final int[] arr;
