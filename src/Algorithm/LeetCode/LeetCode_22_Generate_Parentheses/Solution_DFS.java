@@ -14,6 +14,7 @@ public class Solution_DFS {
         }
 
         dfs("", 0, 0, n, res);
+
         return res;
     }
 
@@ -30,7 +31,7 @@ public class Solution_DFS {
             return;
         }
 
-        // 剪枝
+        // 剪枝，重要！！
         if (left < right) {
             return;
         }
@@ -38,6 +39,7 @@ public class Solution_DFS {
         if (left < n) {
             dfs(curStr + "(", left + 1, right, n, res);
         }
+
         if (right < n) {
             dfs(curStr + ")", left, right + 1, n, res);
         }
@@ -49,6 +51,5 @@ public class Solution_DFS {
         List<String> result = foo.generateParenthesis(3);
 
         System.out.println(Arrays.toString(result.toArray()));
-
     }
 }

@@ -1,11 +1,11 @@
 //package mics;
 //
 //import org.junit.Assert;
-//import org.junit.Test;
+//import org.junit.Foo;
 //import org.mq.code.RateLimiter1.RateLimiter;
 //
 //public class RateLimiterTest {
-//    @Test
+//    @Foo
 //    public void shouldReturnTrueIfAllowed() {
 //        RateLimiter rateLimiter = new RateLimiter(3, 1000);
 //        long currentTimestamp = System.currentTimeMillis();
