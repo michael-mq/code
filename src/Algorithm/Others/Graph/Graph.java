@@ -8,14 +8,11 @@ public class Graph {
     void dfsTraversing(int[][] graph) {
         int[] visited = new int[graph.length];
 
-//        for (int i = 0; i < graph.length; i++) {
-//            if (visited[i] == 0) {// 当前顶点没有被访问
-//                dfsHelper(i, graph, visited);
-//            }
-//        }
-
-        // or
-        dfsHelper(0, graph, visited);
+        for (int i = 0; i < graph.length; i++) {
+            if (visited[i] == 0) {// 当前顶点没有被访问
+                dfsHelper(i, graph, visited);
+            }
+        }
     }
 
     void dfsHelper(int i, int[][] graph, int[] visited) {
@@ -57,27 +54,6 @@ public class Graph {
         }
     }
 
-    //BFS(广度优先遍历)同样适用于有向图 0->2->3->1->4->5
-    public void _bfsTraversing(int[][] graph) {
-        int[] visited = new int[graph.length];
-        Queue<Integer> queue = new LinkedList<>();
-
-
-        visited[0] = 1;
-        queue.add(0);
-
-        while (!queue.isEmpty()) {
-            int cur = queue.poll();
-            System.out.print(cur + " ");
-
-            for (int j = 0; j < graph.length; j++) {
-                if (visited[j] != 1 && graph[cur][j] == 1) {
-                    visited[j] = 1;
-                    queue.add(j);
-                }
-            }
-        }
-    }
 
     public static void main(String[] args) {
         Graph foo = new Graph();
@@ -95,6 +71,6 @@ public class Graph {
 
         System.out.println();
 
-        foo._bfsTraversing(graph);
+        foo.bfsTraversing(graph);
     }
 }

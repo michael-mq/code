@@ -10,7 +10,7 @@ public class Solution_UnionFind {
         private int[] rank;
 
         public UF(int n) {
-            this.count = n;
+            count = n;
             parent = new int[n];
             rank = new int[n];
             for (int i = 0; i < n; i++) {
@@ -86,6 +86,15 @@ public class Solution_UnionFind {
                 {1, 1, 0},
                 {1, 1, 1},
                 {0, 1, 1}
+        };
+
+        System.out.println(foo.findCircleNum(grid));
+
+        grid = new int[][]{
+                {1, 0, 0, 1},
+                {0, 1, 1, 0},
+                {0, 1, 1, 1},
+                {1, 0, 1, 1}
         };
 
         System.out.println(foo.findCircleNum(grid));
