@@ -25,7 +25,7 @@ class Solution_Recursion {
             } else if (s.charAt(i) == ']') {
                 return new String[]{String.valueOf(i), res.toString()};
             } else {
-                res.append(String.valueOf(s.charAt(i)));
+                res.append(s.charAt(i));
             }
 
             i++;
