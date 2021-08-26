@@ -40,3 +40,11 @@ root.left == right;
 root.right == left;
 
 // BUT root.left and root.right is not swapped!!!!!
+
+
+/**
+ * Sort by starting points:
+ * the minimum number of intervals to cover the whole range
+ * Sort by ending points:
+ * the maximum number of *"non-overlapping"* intervals
+ */
