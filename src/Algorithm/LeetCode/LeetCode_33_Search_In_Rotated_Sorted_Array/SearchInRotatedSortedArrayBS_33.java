@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_33_Search_In_Rotated_Sorted_Array_BS;
+package Algorithm.LeetCode.LeetCode_33_Search_In_Rotated_Sorted_Array;
 
 public class SearchInRotatedSortedArrayBS_33 {
     public int search(int[] nums, int target) {
