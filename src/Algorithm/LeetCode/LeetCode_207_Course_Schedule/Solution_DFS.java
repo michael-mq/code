@@ -4,35 +4,39 @@ import java.util.ArrayList;
 import java.util.List;
 
 class Solution_DFS {
-    List<List<Integer>> edges;
     int[] visited;
-    boolean valid = true;
+    boolean valid;
+    List<List<Integer>> edges;
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        visited = new int[numCourses];
         edges = new ArrayList<>();
 
-        for (int i = 0; i < numCourses; ++i) {
+        for (int i = 0; i < numCourses; i++) {
             edges.add(new ArrayList<>());
         }
-        visited = new int[numCourses];
 
-        for (int[] info : prerequisites) {
-            edges.get(info[1]).add(info[0]);
+        for (int[] prerequisite : prerequisites) {
+            edges.get(prerequisite[1]).add(prerequisite[0]);
         }
 
-        for (int i = 0; i < numCourses && valid; ++i) {
+        for (int i = 0; i < numCourses; i++) {
             if (visited[i] == 0) {
                 dfs(i);
             }
+
+            if (!valid) {
+                return false;
+            }
         }
 
-        return valid;
+        return true;
     }
 
-    public void dfs(int u) {
+    private void dfs(int u) {
         visited[u] = 1;
 
-        for (int v : edges.get(u)) {
+        for(int v: edges.get(u)) {
             if (visited[v] == 0) {
                 dfs(v);
 
@@ -41,6 +45,7 @@ class Solution_DFS {
                 }
             } else if (visited[v] == 1) {
                 valid = false;
+
                 return;
             }
         }
