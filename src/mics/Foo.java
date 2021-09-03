@@ -1,28 +1,18 @@
 package mics;
 
+import java.util.*;
+
 public class Foo {
-    private enum Level {
-        HIGH (3),
-        MEDIUM(2),
-        LOW (1)
-        ;
-
-        private final int levelCode;
-
-        private Level (int levelCode){
-            this.levelCode = levelCode;
-        }
-
-        public int getLevelCode() {
-            return levelCode;
-        }
-    }
 
     public static void main(String[] args) {
-        Level level = Level.MEDIUM;
+        Map<Integer, List<String>> map = new HashMap<>();
 
-        System.out.println(level.getLevelCode());
-        System.out.println(Level.LOW);
+        List<String> temp = map.getOrDefault(1, new ArrayList<>());
+        temp.add("ss");
+
+        map.put(1, temp);
+
+        System.out.println(Arrays.toString(map.get(1).toArray()));
     }
 }
 
