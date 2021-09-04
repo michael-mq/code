@@ -30,31 +30,36 @@ class Solution_BruteForce {
         visited[i][j] = true;
         res.add(matrix[i][j]);
 
-        if (direction.equals("right")) {
-            if (j < matrix[0].length - 1 && !visited[i][j + 1]) {
-                dfs(matrix, i, j + 1, "right", res, visited);
-            } else {
-                dfs(matrix, i + 1, j, "down", res, visited);
-            }
+        switch (direction) {
+            case "right":
+                if (j < matrix[0].length - 1 && !visited[i][j + 1]) {
+                    dfs(matrix, i, j + 1, "right", res, visited);
+                } else {
+                    dfs(matrix, i + 1, j, "down", res, visited);
+                }
 
-        } else if (direction.equals("down")) {
-            if (i < matrix.length - 1 && !visited[i + 1][j]) {
-                dfs(matrix, i + 1, j, "down", res, visited);
-            } else {
-                dfs(matrix, i, j - 1, "left", res, visited);
-            }
-        } else if (direction.equals("left")) {
-            if (j > 0 && !visited[i][j - 1]) {
-                dfs(matrix, i, j - 1, "left", res, visited);
-            } else {
-                dfs(matrix, i - 1, j, "up", res, visited);
-            }
-        } else if (direction.equals("up")) {
-            if (i > 0 && !visited[i - 1][j]) {
-                dfs(matrix, i - 1, j, "up", res, visited);
-            } else {
-                dfs(matrix, i, j + 1, "right", res, visited);
-            }
+                break;
+            case "down":
+                if (i < matrix.length - 1 && !visited[i + 1][j]) {
+                    dfs(matrix, i + 1, j, "down", res, visited);
+                } else {
+                    dfs(matrix, i, j - 1, "left", res, visited);
+                }
+                break;
+            case "left":
+                if (j > 0 && !visited[i][j - 1]) {
+                    dfs(matrix, i, j - 1, "left", res, visited);
+                } else {
+                    dfs(matrix, i - 1, j, "up", res, visited);
+                }
+                break;
+            case "up":
+                if (i > 0 && !visited[i - 1][j]) {
+                    dfs(matrix, i - 1, j, "up", res, visited);
+                } else {
+                    dfs(matrix, i, j + 1, "right", res, visited);
+                }
+                break;
         }
     }
 }

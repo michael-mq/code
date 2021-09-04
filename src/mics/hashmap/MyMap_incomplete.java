@@ -1,16 +1,16 @@
 package mics.hashmap;
 
-public class MyMap<K, V> {
+public class MyMap_incomplete<K, V> {
     private Entry<K, V>[] buckets;
     private static final int INITIAL_CAPACITY = 1 << 4; // 16
 
     private int size = 0;
 
-    public MyMap() {
+    public MyMap_incomplete() {
         this(INITIAL_CAPACITY);
     }
 
-    public MyMap(int capacity) {
+    public MyMap_incomplete(int capacity) {
         size = capacity;
         this.buckets = new Entry[capacity];
     }
