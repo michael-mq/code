@@ -18,7 +18,7 @@ class MyQueue2 {
     /**
      * Initialize your data structure here.
      */
-    public MyQueue() {
+    public MyQueue2() {
         stack1 = new Stack<>();
         stack2 = new Stack<>();
     }

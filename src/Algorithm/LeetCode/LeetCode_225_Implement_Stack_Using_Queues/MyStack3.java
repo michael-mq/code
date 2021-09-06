@@ -1,5 +1,8 @@
 package Algorithm.LeetCode.LeetCode_225_Implement_Stack_Using_Queues;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class MyStack3 {
     Queue<Integer> q1;
     Queue<Integer> q2;
@@ -7,7 +10,7 @@ public class MyStack3 {
     /**
      * Initialize your data structure here.
      */
-    public MyStack() {
+    public MyStack3() {
         q1 = new LinkedList<>();
         q2 = new LinkedList<>();
     }
