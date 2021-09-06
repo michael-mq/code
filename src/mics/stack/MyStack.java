@@ -51,7 +51,6 @@ public class MyStack<T> {
     }
 
     private void extendCapacity() {
-        T[] newArr = Arrays.copyOf(arr, arr.length + INITIAL_CAPACITY);
-        this.arr = newArr;
+        this.arr = Arrays.copyOf(arr, arr.length + INITIAL_CAPACITY);
     }
 }

@@ -93,7 +93,6 @@ public class MyLinkedList<T> {
         return sb.toString();
     }
 
-
     public Node getHead() {
         return head;
     }
