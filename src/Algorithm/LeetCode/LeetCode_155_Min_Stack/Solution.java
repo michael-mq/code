@@ -64,6 +64,9 @@ class MinStack {
         minStack.getMin();
         minStack.pop();
         minStack.getMin();
+
+        System.out.println(-1024 == -1024);
+        System.out.println(Integer.valueOf(-1024) == Integer.valueOf(-1024));
     }
 }
 
