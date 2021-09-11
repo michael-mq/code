@@ -54,5 +54,3 @@ class HitCounter {
         return false;
     }
 }
-
-

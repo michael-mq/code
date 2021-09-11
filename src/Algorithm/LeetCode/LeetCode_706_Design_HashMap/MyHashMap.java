@@ -1,6 +1,5 @@
 package Algorithm.LeetCode.LeetCode_706_Design_HashMap;
 
-import java.util.Iterator;
 import java.util.LinkedList;
 
 class MyHashMap {
@@ -27,7 +26,7 @@ class MyHashMap {
     }
 
     private static final int BASE = 769;
-    private LinkedList[] data;
+    private LinkedList<Pair>[] data;
 
     /**
      * Initialize your data structure here.
@@ -35,7 +34,7 @@ class MyHashMap {
     public MyHashMap() {
         data = new LinkedList[BASE];
         for (int i = 0; i < BASE; ++i) {
-            data[i] = new LinkedList<Pair>();
+            data[i] = new LinkedList<>();
         }
     }
 
@@ -44,9 +43,7 @@ class MyHashMap {
      */
     public void put(int key, int value) {
         int h = hash(key);
-        Iterator<Pair> iterator = data[h].iterator();
-        while (iterator.hasNext()) {
-            Pair pair = iterator.next();
+        for (Pair pair : data[h]) {
             if (pair.getKey() == key) {
                 pair.setValue(value);
                 return;
@@ -60,9 +57,7 @@ class MyHashMap {
      */
     public int get(int key) {
         int h = hash(key);
-        Iterator<Pair> iterator = data[h].iterator();
-        while (iterator.hasNext()) {
-            Pair pair = iterator.next();
+        for (Pair pair : data[h]) {
             if (pair.getKey() == key) {
                 return pair.value;
             }
@@ -75,9 +70,7 @@ class MyHashMap {
      */
     public void remove(int key) {
         int h = hash(key);
-        Iterator<Pair> iterator = data[h].iterator();
-        while (iterator.hasNext()) {
-            Pair pair = iterator.next();
+        for (Pair pair : data[h]) {
             if (pair.key == key) {
                 data[h].remove(pair);
                 return;

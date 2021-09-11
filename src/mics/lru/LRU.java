@@ -34,7 +34,7 @@ public class LRU<K, V> {
         head = new Node<>();
         tail = new Node<>();
         head.next = tail;
-        tail.next = head;
+        tail.prev = head;
     }
 
     public void put(K key, V val) {
