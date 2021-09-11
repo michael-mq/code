@@ -2,48 +2,38 @@ package Algorithm.LeetCode.LeetCode_295_Find_Median_from_Data_Stream;
 
 import java.util.PriorityQueue;
 
+// https://mp.weixin.qq.com/s?__biz=MzAxODQxMDM0Mw==&mid=2247487197&idx=1&sn=0cb587fda164bda7fbcaa54cb9630fde&scene=21#wechat_redirect
+
 class MedianFinder {
-    private PriorityQueue<Integer> l;
-    private PriorityQueue<Integer> r;
+    private PriorityQueue<Integer> large;
+    private PriorityQueue<Integer> small;
 
     /**
      * initialize your data structure here.
      */
     public MedianFinder() {
-        l = new PriorityQueue<>((a, b) -> b - a);
-        r = new PriorityQueue<>((a, b) -> a - b);
+        small = new PriorityQueue<>((a, b) -> b - a);
+        large = new PriorityQueue<>((a, b) -> a - b);
     }
 
     public void addNum(int num) {
-        int s1 = l.size();
-        int s2 = r.size();
-
-        if (s1 == s2) {
-            if (r.isEmpty() || num <= r.peek()) {
-                l.add(num);
-            } else {
-                l.add(r.poll());
-                r.add(num);
-            }
+        if (small.size() >= large.size()) {
+            small.offer(num);
+            large.offer(small.poll());
         } else {
-            if (l.peek() <= num) {
-                r.add(num);
-            } else {
-                r.add(l.poll());
-                l.add(num);
-            }
+            large.offer(num);
+            small.offer(large.poll());
         }
     }
 
     public double findMedian() {
-        int s1 = l.size();
-        int s2 = r.size();
-
-        if (s1 == s2) {
-            return (l.peek() + r.peek()) / 2.0;
-        } else {
-            return l.peek();
+        if (small.size() > large.size()) {
+            return small.peek();
+        } else if (small.size() < large.size()) {
+            return large.peek();
         }
+
+        return (small.peek() + large.peek()) / 2.0;
     }
 }
 
