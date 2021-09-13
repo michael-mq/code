@@ -34,4 +34,19 @@ class Solution {
 
         ans.add(0, src); // 逆序插入
     }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        List<List<String>> tickets = new ArrayList<>();
+
+//        [["JFK","KUL"],["JFK","NRT"],["NRT","JFK"]]
+        tickets.add(Arrays.asList("JFK", "KUL"));
+        tickets.add(Arrays.asList("JFK", "NRT"));
+        tickets.add(Arrays.asList("NRT", "JFK"));
+
+        List<String> res = solution.findItinerary(tickets);
+
+        System.out.println(Arrays.toString(res.toArray()));
+    }
 }
