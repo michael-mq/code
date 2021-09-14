@@ -29,16 +29,18 @@ public class Solution {
             return memo[row][column];
         }
 
-        memo[row][column] = 1;
+        int max = 0;
 
         for (int[] dir : dirs) {
             int newRow = row + dir[0];
             int newColumn = column + dir[1];
 
             if (newRow >= 0 && newColumn >= 0 && newRow < rows && newColumn < columns && matrix[newRow][newColumn] > matrix[row][column]) {
-                memo[row][column] = Math.max(memo[row][column], dfs(matrix, newRow, newColumn) + 1);
+                max = Math.max(max, dfs(matrix, newRow, newColumn));
             }
         }
+
+        memo[row][column] = max + 1;
 
         return memo[row][column];
     }
