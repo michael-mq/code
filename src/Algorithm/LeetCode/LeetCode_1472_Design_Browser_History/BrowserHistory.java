@@ -1,14 +1,14 @@
 package Algorithm.LeetCode.LeetCode_1472_Design_Browser_History;
 
-import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 class BrowserHistory {
     private LinkedList<String> history;
     private int pointer;
 
     public BrowserHistory(String homepage) {
-        history = new LinkedList<String>(Arrays.asList(homepage));
+        history = new LinkedList<String>(List.of(homepage));
         pointer = 0;
     }
 

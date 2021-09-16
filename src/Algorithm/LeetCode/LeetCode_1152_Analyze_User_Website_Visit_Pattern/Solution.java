@@ -1,13 +1,6 @@
 package Algorithm.LeetCode.LeetCode_1152_Analyze_User_Website_Visit_Pattern;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 class Pair {
     public int time;
@@ -34,7 +27,7 @@ public class Solution {
         for (String userKey : userMap.keySet()) {
             List<Pair> pairs = userMap.get(userKey);
 
-            Collections.sort(pairs, (a, b) -> a.time - b.time);
+            pairs.sort((a, b) -> a.time - b.time);
             Set<String> set = new HashSet<>();
 
             for (int i = 0; i < pairs.size(); i++) {

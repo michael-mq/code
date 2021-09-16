@@ -12,7 +12,7 @@ class Solution {
         int[] res = new int[m * n];
 
         for (int i = 0; i < m * n; i++) {
-            System.out.print(i + "," + row + "," + col + "   ");
+//            System.out.print(i + "," + row + "," + col + "   ");
             res[i] = mat[row][col];
 
             if ((row + col) % 2 == 0) {

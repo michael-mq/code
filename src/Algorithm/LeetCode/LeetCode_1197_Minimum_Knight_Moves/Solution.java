@@ -1,9 +1,6 @@
 package Algorithm.LeetCode.LeetCode_1197_Minimum_Knight_Moves;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+import java.util.*;
 
 class Solution {
     public int minKnightMoves(int x, int y) {
@@ -15,7 +12,7 @@ class Solution {
         Queue<int[]> queue = new LinkedList<>();
         queue.add(new int[]{0, 0});
 
-        Set<String> visited = new HashSet<>();
+        List<String> visited = new ArrayList<>();
         visited.add("0,0");
 
         int res = 0;
@@ -45,5 +42,10 @@ class Solution {
         }
 
         return -1;
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+        System.out.println(solution.minKnightMoves(1, 1));
     }
 }

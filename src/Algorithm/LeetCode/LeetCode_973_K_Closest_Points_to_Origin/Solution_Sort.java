@@ -18,9 +18,9 @@ public class Solution_Sort {
         int[][] ans = new int[K][2];
         int t = 0;
 
-        for (int i = 0; i < len; ++i) {
-            if (getDistance(points[i]) <= distK) {
-                ans[t++] = points[i];
+        for (int[] point : points) {
+            if (getDistance(point) <= distK) {
+                ans[t++] = point;
             }
         }
 
