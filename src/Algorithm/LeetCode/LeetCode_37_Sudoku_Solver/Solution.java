@@ -68,7 +68,7 @@ public class Solution {
             return recursiveSolveSudoku(board, rowUsed, colUsed, boxUsed, row, col + 1);
         }
 
-        // if current try failed at line 56: if (recursiveSolveSudoku(board, rowUsed, colUsed, boxUsed, row, col + 1))
+        // if current try failed for all numbers at line 56: if (recursiveSolveSudoku(board, rowUsed, colUsed, boxUsed, row, col + 1))
         return false;
     }
 

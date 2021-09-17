@@ -46,4 +46,9 @@ class Solution_BFS_InDegree {
 
         return true;
     }
+
+    public static void main(String[] args) {
+        Solution_BFS_InDegree s = new Solution_BFS_InDegree();
+        System.out.println(s.canFinish(4, new int[][]{{1, 0}, {2, 0}, {3, 1}, {3, 2}, {1, 3}}));
+    }
 }
