@@ -27,15 +27,14 @@ public class Solution_DFS {
         int m = board.length;
         int n = board[0].length;
 
-        if (i < 0 || j < 0 || i > m - 1 || j > n - 1 || board[i][j] == 'X' || board[i][j] == '#')
-            return;
+        if (i >= 0 && j >= 0 && i < m && j < n && board[i][j] == 'O') {
+            board[i][j] = '#';
 
-        board[i][j] = '#';
+            int[][] directions = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
-        int[][] d = new int[][]{{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
-
-        for (int k = 0; k < 4; k++) {
-            dfs(board, i + d[k][0], j + d[k][1]);
+            for (int[] d : directions) {
+                dfs(board, i + d[0], j + d[1]);
+            }
         }
     }
 }
