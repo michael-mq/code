@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_647_Palindromic_Substrings;
 
-public class Solution {
+public class Solution_DP {
     public int countSubstrings(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
         int ans = 0;
