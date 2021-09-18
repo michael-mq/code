@@ -2,19 +2,10 @@ package Algorithm.LeetCode.LeetCode_5_Longest_Palindromic_Substring;
 
 public class Solution_ExpandAroundCenter {
     public String longestPalindrome(String s) {
-        if (s == null) {
-            return null;
-        }
-
-        int len = s.length();
-        if (len < 2) {
-            return s;
-        }
-
         int maxLen = 1;
         int begin = 0;
 
-        for (int i = 0; i < len - 1; i++) {
+        for (int i = 0; i < s.length(); i++) {
             int oddLen = expandAroundCenter(s, i, i);
             int evenLen = expandAroundCenter(s, i, i + 1);
 
@@ -27,19 +18,14 @@ public class Solution_ExpandAroundCenter {
         }
 
         return s.substring(begin, begin + maxLen);
-
     }
 
     public int expandAroundCenter(String s, int left, int right) {
-        while(left >= 0 && right < s.length()) {
-            if (s.charAt(left) == s.charAt(right)) {
-                left--;
-                right++;
-            } else {
-                break;
-            }
-
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
         }
+
         return right - left - 1;
     }
 

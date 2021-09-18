@@ -2,36 +2,27 @@ package Algorithm.LeetCode.LeetCode_5_Longest_Palindromic_Substring;
 
 public class Solution_DP {
     public String longestPalindrome(String s) {
-        if (s == null) {
-            return null;
-        }
+        boolean[][] dp = new boolean[s.length()][s.length()];
+        String res = "";
+        int start = 0;
+        int maxLength = 0;
 
-        int len = s.length();
-        if (len < 2) {
-            return s;
-        }
 
-        int maxLen = 1;
-        int begin = 0;
+        for (int j = 0; j < s.length(); j++) {
+            for (int i = 0; i <= j; i++ ) {
+                if (s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1])) {
+                    dp[i][j] = true;
 
-        boolean[][] dp = new boolean[len][len];
+                    if (j - i + 1 > maxLength) {
+                        maxLength = j - i + 1;
+                        start = i;
+                    }
 
-        for (int i = 0; i < len; i++) {
-            dp[i][i] = true;
-        }
-
-        for (int j = 1; j < len; j++) {
-            for (int i = 0; i < j; i++) {
-                dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
-
-                if (dp[i][j] && j - i + 1 > maxLen) {
-                    maxLen = j - i + 1;
-                    begin = i;
                 }
             }
         }
 
-        return s.substring(begin, begin + maxLen);
+        return s.substring(start, start + maxLength);
     }
 
     public static void main(String[] args) {
