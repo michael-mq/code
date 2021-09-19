@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_695_Max_Area_of_Island;
 
-public class Solution {
+public class Solution_UF {
     public int maxAreaOfIsland(int[][] grid) {
         int m = grid.length;
         int n = grid[0].length;
@@ -28,7 +28,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_UF solution = new Solution_UF();
 
         System.out.println(solution.maxAreaOfIsland(new int[][]{{1, 1}}));
     }
@@ -80,7 +80,6 @@ class UnionFind {
             if (rank[rootX] > rank[rootY]) {
                 parent[rootY] = rootX;
                 rank[rootX] += rank[rootY];
-
                 maxRank = Math.max(maxRank, rank[rootX]);
             } else {
                 parent[rootX] = rootY;
