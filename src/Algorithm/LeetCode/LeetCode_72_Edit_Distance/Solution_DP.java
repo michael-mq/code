@@ -1,5 +1,16 @@
 package Algorithm.LeetCode.LeetCode_72_Edit_Distance;
 
+/**
+ *    | '' | r | o | s
+ * ------------------------------
+ * '' |  0 | 1 | 2 | 3
+ *  h |  1 | 1 | 2 | 3
+ *  o |  2 | 2 |'1'| 2
+ *  r |  3 |'2'| 2 | 2
+ *  s |  4 | 3 | 3 |'2'
+ *  e |  5 | 4 | 4 | 3
+ */
+
 public class Solution_DP {
     public int minDistance(String word1, String word2) {
         int len1 = word1.length(), len2 = word2.length();
