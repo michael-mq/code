@@ -3,8 +3,11 @@ package Algorithm.LeetCode.LeetCode_1383_Maximum_Performance_of_a_Team;
 import java.util.Arrays;
 import java.util.PriorityQueue;
 
+// https://www.youtube.com/watch?v=2hQgKotGA7o
+
 class Solution {
     public int maxPerformance(int n, int[] speed, int[] efficiency, int k) {
+        final int MOD = 1000000007;
         int[][] engineers = new int[n][2];
 
         for (int i = 0; i < n; i++) {
@@ -12,27 +15,28 @@ class Solution {
             engineers[i][1] = efficiency[i];
         }
 
-        Arrays.sort(engineers, (a, b) -> a[1] - b[1]);
-        PriorityQueue<int[]> queue = new PriorityQueue<>((a, b) -> b[1] - a[1]);
+        Arrays.sort(engineers, (a, b) -> b[1] - a[1]);
+        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
 
-        long res = 0, sum = 0;
+        long res = 0;
+        long speedSum = 0;
+
         for (int i = 0; i < n; i++) {
             int[] engineer = engineers[i];
 
-            long curMin = engineer[1];
-            long curTotal = sum + engineer[0];
+            int minEfficiency = engineer[1];
+            speedSum += engineer[0];
 
-            res = Math.max(res, curTotal * curMin);
+            res = Math.max(res, minEfficiency * speedSum);
 
-            sum = curTotal;
+            minHeap.offer(engineer);
 
-            queue.offer(engineer);
-
-            if (queue.size() == k)
-                sum -= queue.poll()[0];
+            if (minHeap.size() == k) {
+                speedSum -= minHeap.poll()[0];
+            }
         }
 
-        return (int) (res % ((int) 1e9 + 7));
+        return (int) (res % MOD);
     }
 
     public static void main(String[] args) {
