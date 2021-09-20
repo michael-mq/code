@@ -19,7 +19,6 @@ class Interval {
     }
 };
 
-
 class Solution {
     private static final Comparator<Interval> cmp = new Comparator<Interval>() {
         @Override

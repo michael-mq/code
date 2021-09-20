@@ -44,7 +44,7 @@ root.right == left;
 
 /**
  * Sort by starting points:
- * the minimum number of intervals to cover the whole range
+ * the minimum number of intervals to "cover" the whole range
  * Sort by ending points:
  * the maximum number of *"non-overlapping"* intervals
  */

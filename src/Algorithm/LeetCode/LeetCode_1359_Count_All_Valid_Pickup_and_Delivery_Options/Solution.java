@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_1359_Count_All_Valid_Pickup_and_Delivery_Options;
 
-//https://www.youtube.com/watch?v=H0Yl1AlUuK8
+// https://www.youtube.com/watch?v=_OKIln4iieM
 class Solution {
     public int countOrders(int n) {
         final int MOD = 1000000007;
@@ -11,6 +11,6 @@ class Solution {
             res %= MOD;
         }
 
-        return (int) res % MOD;
+        return (int) (res % MOD);
     }
 }

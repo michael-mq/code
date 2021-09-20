@@ -1,47 +1,43 @@
 package Algorithm.LeetCode.LeetCode_329_Longest_Increasing_Path_in_a_Matrix;
 
 public class Solution {
-    private int[][] dirs = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
-    private int rows, columns;
-    private int[][] memo;
-
     public int longestIncreasingPath(int[][] matrix) {
-        if (matrix == null || matrix.length == 0 || matrix[0].length == 0) {
-            return 0;
-        }
-
-        rows = matrix.length;
-        columns = matrix[0].length;
-        memo = new int[rows][columns];
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] memo = new int[m][n];
         int ans = 0;
 
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < columns; j++) {
-                ans = Math.max(ans, dfs(matrix, i, j));
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                ans = Math.max(ans, dfs(matrix, i, j, memo));
             }
         }
 
         return ans;
     }
 
-    private int dfs(int[][] matrix, int row, int column) {
-        if (memo[row][column] != 0) {
-            return memo[row][column];
+    private int dfs(int[][] matrix, int row, int col, int[][] memo) {
+        if (memo[row][col] != 0) {
+            return memo[row][col];
         }
+
+        int m = matrix.length;
+        int n = matrix[0].length;
+        int[][] directions = {{-1, 0}, {1, 0}, {0, -1}, {0, 1}};
 
         int max = 0;
 
-        for (int[] dir : dirs) {
-            int newRow = row + dir[0];
-            int newColumn = column + dir[1];
+        for (int[] d : directions) {
+            int newRow = row + d[0];
+            int newCol = col + d[1];
 
-            if (newRow >= 0 && newColumn >= 0 && newRow < rows && newColumn < columns && matrix[newRow][newColumn] > matrix[row][column]) {
-                max = Math.max(max, dfs(matrix, newRow, newColumn));
+            if (newRow >= 0 && newRow < m && newCol >= 0 && newCol < n && matrix[newRow][newCol] > matrix[row][col]) {
+                max = Math.max(max, dfs(matrix, newRow, newCol, memo));
             }
         }
 
-        memo[row][column] = max + 1;
+        memo[row][col] = max + 1;
 
-        return memo[row][column];
+        return memo[row][col];
     }
 }
