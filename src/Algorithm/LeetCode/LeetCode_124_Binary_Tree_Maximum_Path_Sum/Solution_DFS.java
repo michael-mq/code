@@ -23,7 +23,7 @@ class TreeNode {
 
 class Solution_DFS {
     public int maxPathSum(TreeNode root) {
-        int[] res = new int[1];
+        int[] res = new int[]{Integer.MIN_VALUE};
 
         dfs(root, res);
 

@@ -16,7 +16,7 @@ class Solution {
         }
 
         Arrays.sort(engineers, (a, b) -> b[1] - a[1]);
-        PriorityQueue<int[]> minHeap = new PriorityQueue<>((a, b) -> a[0] - b[0]);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>((a, b) -> a - b);
 
         long res = 0;
         long speedSum = 0;
@@ -29,10 +29,10 @@ class Solution {
 
             res = Math.max(res, minEfficiency * speedSum);
 
-            minHeap.offer(engineer);
+            minHeap.offer(engineer[0]);
 
             if (minHeap.size() == k) {
-                speedSum -= minHeap.poll()[0];
+                speedSum -= minHeap.poll();
             }
         }
 
