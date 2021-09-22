@@ -9,10 +9,6 @@ class Solution_DP1 {
     public int jobScheduling(int[] startTime, int[] endTime, int[] profit) {
         int len = startTime.length;
 
-        if (len == 0) {
-            return 0;
-        }
-
         if (len == 1) {
             return profit[0];
         }

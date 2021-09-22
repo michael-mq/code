@@ -52,4 +52,8 @@ public class Solution {
 
         return new ArrayList<>(Arrays.asList(resArray));
     }
+
+    public static void main(String[] args) {
+        System.out.println("b".compareTo("a"));
+    }
 }

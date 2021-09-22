@@ -50,11 +50,14 @@ class Twitter_MyOwn {
      * Follower follows a followee. addIf the operation is invalid, it should be a no-op.
      */
     public void follow(int followerId, int followeeId) {
-        if (follows.containsKey(followerId)) {
-            follows.get(followerId).add(followeeId);
-        } else {
-            follows.put(followerId, new HashSet<Integer>(List.of(followeeId)));
-        }
+//        if (follows.containsKey(followerId)) {
+//            follows.get(followerId).add(followeeId);
+//        } else {
+//            follows.put(followerId, new HashSet<Integer>(List.of(followeeId)));
+//        }
+
+        Set<Integer> set = follows.computeIfAbsent(followerId, k -> new HashSet<>());
+        set.add(followeeId);
     }
 
     /**
