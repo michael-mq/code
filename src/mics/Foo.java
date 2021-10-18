@@ -13,6 +13,8 @@ public class Foo {
         map.put(1, temp);
 
         System.out.println(Arrays.toString(map.get(1).toArray()));
+
+        System.out.println(Arrays.toString((new ArrayList<String>(Collections.singleton("foo")).toArray())));
     }
 }
 
