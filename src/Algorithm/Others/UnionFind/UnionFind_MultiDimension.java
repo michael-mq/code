@@ -41,7 +41,9 @@ public class UnionFind_MultiDimension {
             return x;
         }
 
-        return find(parent[x]);
+        parent[x] = find(parent[x]);
+
+        return parent[x];
     }
 
     public void union(int x, int y) {

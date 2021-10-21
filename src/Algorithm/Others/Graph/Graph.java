@@ -36,6 +36,7 @@ public class Graph {
             if (visited[i] == 1) {
                 continue;
             }
+
             visited[i] = 1;
             queue.add(i);
 
@@ -53,7 +54,6 @@ public class Graph {
 
         }
     }
-
 
     public static void main(String[] args) {
         Graph foo = new Graph();

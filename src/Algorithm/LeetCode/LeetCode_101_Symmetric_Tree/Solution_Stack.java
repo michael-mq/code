@@ -8,7 +8,7 @@ public class Solution_Stack {
             return true;
         }
 
-        Stack<TreeNode> stack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<>();
 
         stack.push(root.left);
         stack.push(root.right);

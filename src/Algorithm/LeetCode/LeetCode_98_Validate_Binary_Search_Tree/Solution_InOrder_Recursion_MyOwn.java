@@ -7,9 +7,9 @@ public class Solution_InOrder_Recursion_MyOwn {
     public boolean isValidBST(TreeNode root) {
         List<TreeNode> list = new ArrayList<>();
 
-        dfs(root,list);
+        dfs(root, list);
 
-        for(int i = 1; i < list.size(); i++) {
+        for (int i = 1; i < list.size(); i++) {
             if (list.get(i).val <= list.get(i - 1).val) {
                 return false;
             }

@@ -8,10 +8,11 @@ public class Solution_Queue {
             return true;
         }
         //用队列保存节点
-        LinkedList<TreeNode> queue = new LinkedList<TreeNode>();
+        LinkedList<TreeNode> queue = new LinkedList<>();
         //将根节点的左右孩子放到队列中
         queue.add(root.left);
         queue.add(root.right);
+
         while (queue.size() > 0) {
             //从队列中取出两个节点，再比较这两个节点
             TreeNode left = queue.poll();
