@@ -11,7 +11,7 @@ public class Solution_HashMap {
         }
 
         // nums1.length < nums2.length
-        Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int num : nums1) {
             int count = map.getOrDefault(num, 0) + 1;
             map.put(num, count);

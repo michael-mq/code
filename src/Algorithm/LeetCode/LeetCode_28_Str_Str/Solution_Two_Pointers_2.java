@@ -2,10 +2,6 @@ package Algorithm.LeetCode.LeetCode_28_Str_Str;
 
 public class Solution_Two_Pointers_2 {
     public int strStr(String haystack, String needle) {
-        if (haystack == null || needle == null) {
-            return -1;
-        }
-
         int haystackLen = haystack.length();
         int needleLen = needle.length();
 

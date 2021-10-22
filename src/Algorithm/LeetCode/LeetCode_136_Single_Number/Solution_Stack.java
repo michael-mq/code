@@ -3,7 +3,7 @@ package Algorithm.LeetCode.LeetCode_136_Single_Number;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class Solution2 {
+public class Solution_Stack {
     public int singleNumber(int[] nums) {
         if (nums.length == 1) {
             return nums[0];
@@ -27,7 +27,7 @@ public class Solution2 {
     }
 
     public static void main(String[] args) {
-        Solution2 solution1 = new Solution2();
+        Solution_Stack solution1 = new Solution_Stack();
 
         long startTime = System.nanoTime();
 

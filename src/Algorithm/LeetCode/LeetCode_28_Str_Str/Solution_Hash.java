@@ -10,10 +10,6 @@ public class Solution_Hash {
      */
 
     public int strStr(String source, String target) {
-        if (source == null || target == null) {
-            return -1;
-        }
-
         int sourceLen = source.length();
         int targetLen = target.length();
 

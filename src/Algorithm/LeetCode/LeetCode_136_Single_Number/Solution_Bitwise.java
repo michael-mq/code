@@ -1,7 +1,7 @@
 package Algorithm.LeetCode.LeetCode_136_Single_Number;
 
 //a ^ b ^ a = b
-
+// https://leetcode-cn.com/problems/single-number/solution/zhi-chu-xian-yi-ci-de-shu-zi-by-leetcode-solution/
 public class Solution_Bitwise {
     public int singleNumber(int[] nums) {
         int single = 0;

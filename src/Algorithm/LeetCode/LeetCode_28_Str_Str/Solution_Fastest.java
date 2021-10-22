@@ -1,11 +1,7 @@
 package Algorithm.LeetCode.LeetCode_28_Str_Str;
 
-public class Solution_BruceForce_1 {
+public class Solution_Fastest {
     public int strStr(String haystack, String needle) {
-        if (haystack == null || needle == null) {
-            return -1;
-        }
-
         int haystackLen = haystack.length();
         int needleLen = needle.length();
 
@@ -27,7 +23,7 @@ public class Solution_BruceForce_1 {
     }
 
     public static void main(String[] args) {
-        Solution_BruceForce_1 solutionBruceForce1 = new Solution_BruceForce_1();
+        Solution_Fastest solutionBruceForce1 = new Solution_Fastest();
 
         System.out.println(solutionBruceForce1.strStr("hello", "ll"));
         System.out.println(solutionBruceForce1.strStr("aaaaa", "bba"));

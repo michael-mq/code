@@ -3,7 +3,7 @@ package Algorithm.LeetCode.LeetCode_136_Single_Number;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Solution1 {
+public class Solution_Map {
     public int singleNumber(int[] nums) {
         if (nums.length == 1) {
             return nums[0];
@@ -29,12 +29,12 @@ public class Solution1 {
     }
 
     public static void main(String[] args) {
-        Solution1 solution1 = new Solution1();
+        Solution_Map solutionMap = new Solution_Map();
 
         long startTime = System.nanoTime();
 
-        System.out.println(solution1.singleNumber(new int[]{2, 2, 1}));
-        System.out.println(solution1.singleNumber(new int[]{4, 1, 2, 1, 2}));
+        System.out.println(solutionMap.singleNumber(new int[]{2, 2, 1}));
+        System.out.println(solutionMap.singleNumber(new int[]{4, 1, 2, 1, 2}));
 
         long endTime = System.nanoTime();
 

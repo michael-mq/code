@@ -19,10 +19,9 @@ class Solution {
         StringBuilder s = new StringBuilder();
         int len = number.length();
 
-        int i = 0;
         int count = 1;
 
-        while (i < len) {
+        for (int i = 0; i < len; i++) {
             if (i < len - 1 && number.charAt(i) == number.charAt(i + 1)) {
                 count++;
             } else {
@@ -30,8 +29,6 @@ class Solution {
                 s.append(number.charAt(i));
                 count = 1;
             }
-
-            i++;
         }
 
         return s.toString();

@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_125_Valid_Palindrome;
 
-public class Solution_ReveseString {
+public class Solution_ReverseString {
     public boolean isPalindrome(String s) {
         int len = s.length();
 
@@ -22,7 +22,7 @@ public class Solution_ReveseString {
     }
 
     public static void main(String[] args) {
-        Solution_ReveseString solution = new Solution_ReveseString();
+        Solution_ReverseString solution = new Solution_ReverseString();
 
         System.out.println(solution.isPalindrome("A man, a plan, a canal: Panama"));
 

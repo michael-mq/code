@@ -8,22 +8,19 @@ import java.util.Map;
 public class Solution_HashMap_MyOwn1 {
     public int[] intersect(int[] nums1, int[] nums2) {
         Map<Integer, Integer> map = new HashMap<>();
-
-        for (int i = 0; i < nums1.length; i++) {
-            map.put(nums1[i], map.computeIfAbsent(nums1[i], k -> 0) + 1);
-        }
-
         List<Integer> res = new ArrayList<>();
 
-        for (int i = 0; i < nums2.length; i++) {
-            int cur = nums2[i];
+        for (int m : nums1) {
+            map.put(m, map.getOrDefault(m, 0) + 1);
+        }
 
-            if (map.containsKey(cur) && map.get(cur) > 0) {
-                res.add(cur);
-                map.put(cur, map.get(cur) - 1);
+        for (int n : nums2) {
+            if (map.containsKey(n) && map.get(n) > 0) {
+                res.add(n);
+                map.put(n, map.get(n) - 1);
             }
         }
 
-        return res.stream().mapToInt(n -> n).toArray();
+        return res.stream().mapToInt(i -> i).toArray();
     }
 }

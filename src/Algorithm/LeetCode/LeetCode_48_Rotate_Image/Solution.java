@@ -10,9 +10,9 @@ class Solution {
         int n = matrix.length;
 
         int top = 0;
+        int left = 0;
         int right = n - 1;
         int bottom = n - 1;
-        int left = 0;
 
         while (n > 1) {
             for (int i = 0; i < n - 1; i++) {
@@ -25,10 +25,11 @@ class Solution {
             }
 
             n -= 2;
+
             top++;
+            left++;
             right--;
             bottom--;
-            left++;
         }
     }
 }
