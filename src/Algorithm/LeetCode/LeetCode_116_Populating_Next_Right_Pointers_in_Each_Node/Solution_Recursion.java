@@ -21,7 +21,7 @@ class Node {
     }
 };
 
-public class Solution {
+public class Solution_Recursion {
     // 主函数
     Node connect(Node root) {
         if (root == null)
