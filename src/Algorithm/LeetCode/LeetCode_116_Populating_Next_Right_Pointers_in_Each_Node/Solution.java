@@ -24,8 +24,10 @@ class Node {
 public class Solution {
     // 主函数
     Node connect(Node root) {
-        if (root == null) return null;
+        if (root == null)
+            return null;
         connectTwoNode(root.left, root.right);
+
         return root;
     }
 
