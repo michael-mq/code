@@ -11,7 +11,7 @@ public class Solution_Recursive {
             return head;
         }
         //这里的cur就是最后一个节点
-        ListNode cur = reverseList(head.next);
+        ListNode cur = reverseList(head.next); // This will always be the last node
         //这里请配合动画演示理解
         //如果链表是 1->2->3->4->5，那么此时的cur就是5
         //而head是4，head的下一个是5，下下一个是空

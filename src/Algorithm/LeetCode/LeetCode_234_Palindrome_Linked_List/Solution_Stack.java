@@ -8,7 +8,7 @@ public class Solution_Stack {
             return true;
         }
 
-        Stack<Integer> stack = new Stack<Integer>();
+        Stack<Integer> stack = new Stack<>();
 
         ListNode current = head;
 
@@ -18,7 +18,7 @@ public class Solution_Stack {
         }
 
         while (!stack.isEmpty()) {
-            if (!stack.pop().equals(head.val)) {
+            if (stack.pop() == head.val) {
                 return false;
             }
 

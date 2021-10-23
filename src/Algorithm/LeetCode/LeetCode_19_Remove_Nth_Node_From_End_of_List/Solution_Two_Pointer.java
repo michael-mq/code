@@ -9,13 +9,13 @@ class Solution_Two_Pointer {
             fast = fast.next;
         }
 
-        if (fast == null) {
+        if (fast == null) { // remove the first element
             return head.next;
         }
 
         while (fast.next != null) {
-            fast = fast.next;
             slow = slow.next;
+            fast = fast.next;
         }
 
         slow.next = slow.next.next;
