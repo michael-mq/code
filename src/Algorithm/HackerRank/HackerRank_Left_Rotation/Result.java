@@ -1,4 +1,4 @@
-package Algorithm.HackRank.HackRank_Left_Rotation;
+package Algorithm.HackerRank.HackerRank_Left_Rotation;
 
 import java.util.List;
 

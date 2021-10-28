@@ -1,4 +1,4 @@
-package Algorithm.HackRank.HackRank_New_Year_Chaos;
+package Algorithm.HackerRank.HackerRank_New_Year_Chaos;
 
 import java.util.List;
 

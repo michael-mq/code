@@ -1,4 +1,4 @@
-package Algorithm.HackRank.HackRank_2d_array;
+package Algorithm.HackerRank.HackerRank_2d_array;
 
 import java.util.List;
 
