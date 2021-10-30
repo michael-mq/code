@@ -7,7 +7,7 @@ public class Solution_DP {
 
         for (int j = 0; j < s.length(); j++) {
             for (int i = 0; i <= j; i++) {
-                if (s.charAt(i) == s.charAt(j) && (j - i < 2 || dp[i + 1][j - 1])) {
+                if (s.charAt(i) == s.charAt(j) && (j - i <= 2 || dp[i + 1][j - 1])) {
                     dp[i][j] = true;
                     ans++;
                 }

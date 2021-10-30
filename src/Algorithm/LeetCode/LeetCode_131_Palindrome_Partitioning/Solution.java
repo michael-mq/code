@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.List;
 
+// https://leetcode-cn.com/problems/palindrome-partitioning/solution/hui-su-you-hua-jia-liao-dong-tai-gui-hua-by-liweiw/
 class Solution {
     public List<List<String>> partition(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
@@ -38,5 +39,11 @@ class Solution {
                 path.removeLast();
             }
         }
+    }
+
+    public static void main(String[] args) {
+        Solution solution = new Solution();
+
+        solution.partition("aab");
     }
 }

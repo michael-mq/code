@@ -2,32 +2,37 @@ package Algorithm.LeetCode.LeetCode_680_Valid_Palindrome_II;
 
 public class Solution_TwoPointer {
     public boolean validPalindrome(String s) {
-        int low = 0, high = s.length() - 1;
+        int len = s.length();
+
+        if (len <= 1) {
+            return true;
+        }
+
+        int low = 0;
+        int high = len - 1;
 
         while (low < high) {
-            char c1 = s.charAt(low), c2 = s.charAt(high);
-
-            if (c1 == c2) {
+            if (s.charAt(low) == s.charAt(high)) {
                 low++;
                 high--;
             } else {
-                boolean flag1 = true, flag2 = true;
+                boolean flag1 = true;
+                boolean flag2 = true;
 
                 for (int i = low, j = high - 1; i < j; i++, j--) {
-                    char c3 = s.charAt(i), c4 = s.charAt(j);
-                    if (c3 != c4) {
+                    if (s.charAt(i) != s.charAt(j)) {
                         flag1 = false;
                         break;
                     }
                 }
 
                 for (int i = low + 1, j = high; i < j; i++, j--) {
-                    char c3 = s.charAt(i), c4 = s.charAt(j);
-                    if (c3 != c4) {
+                    if (s.charAt(i) != s.charAt(j)) {
                         flag2 = false;
                         break;
                     }
                 }
+
                 return flag1 || flag2;
             }
         }
