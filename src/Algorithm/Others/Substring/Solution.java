@@ -37,8 +37,8 @@ public class Solution {
 
     public static void main(String[] args) {
         Solution solution = new Solution();
-        solution.printAllSubstrings_Partitioning_BackTracking("aabaa");
+//        solution.printAllSubstrings_Partitioning_BackTracking("aabaa");
         System.out.println();
-        solution.printAllSubstrings("aabaa");
+        solution.printAllSubstrings("abba");
     }
 }
