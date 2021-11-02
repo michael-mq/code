@@ -5,7 +5,7 @@ import java.util.Stack;
 
 public class Solution_Stack2 {
     public boolean isValid(String s) {
-        if(s.length() >1 && s.length() % 2 != 0){
+        if (s.length() > 1 && s.length() % 2 != 0) {
             return false;
         }
 
@@ -23,7 +23,7 @@ public class Solution_Stack2 {
             // If the current character is a closing bracket.
             if (mappings.containsKey(c)) {
                 // If it's the closing bracket as the first element
-                if(stack.empty()){
+                if (stack.empty()) {
                     return false;
                 }
 
