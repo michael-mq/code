@@ -3,7 +3,6 @@ package Algorithm.LeetCode.LeetCode_366_Find_Leaves_of_Binary_Tree;
 import java.util.ArrayList;
 import java.util.List;
 
-
 class TreeNode {
     int val;
     TreeNode left;
@@ -23,6 +22,7 @@ class TreeNode {
     }
 }
 
+// https://www.youtube.com/watch?v=f072MAkKaNo
 class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
