@@ -1,4 +1,4 @@
-package mics.future;
+package mics.multithreads.future;
 
 import java.util.Date;
 import java.util.concurrent.ExecutorService;

@@ -1,4 +1,4 @@
-package mics.semaphore;
+package mics.multithreads.semaphore;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -107,6 +107,7 @@ public class SemaphoreAsLock {
         service.execute(dt2::run);
         System.out.println("count: " + Shared.count);
 
+        service.shutdown();
     }
 }
 

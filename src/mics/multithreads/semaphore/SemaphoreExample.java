@@ -1,4 +1,4 @@
-package mics.semaphore;
+package mics.multithreads.semaphore;
 
 import java.util.concurrent.Semaphore;
 

@@ -16,7 +16,7 @@ public class Solution_Iterative {
 
         // head != null is for even nodes
         // head.next != null is for odd nodes
-        while ((head != null) && (head.next != null)) {
+        while (head != null && head.next != null) {
             // Nodes to be swapped
             ListNode firstNode = head;
             ListNode secondNode = head.next;

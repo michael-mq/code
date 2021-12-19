@@ -15,7 +15,7 @@ class Solution_DFS {
         Map<Integer, Set<Integer>> graph = new HashMap<>();
 
         for (int[] edge : edges) {
-            if (edge[0] == start && edge[1] == end || edge[1] == start && edge[0] == end) {
+            if (edge[0] == start && edge[1] == end || edge[0] == end && edge[1] == start) {
                 return true;
             }
 
@@ -25,10 +25,10 @@ class Solution_DFS {
 
         Set<Integer> visited = new HashSet<>();
 
-        return dfs(n, graph, start, end, visited);
+        return dfs(graph, start, end, visited);
     }
 
-    private boolean dfs(int n, Map<Integer, Set<Integer>> graph, int start, int end, Set<Integer> visited) {
+    private boolean dfs(Map<Integer, Set<Integer>> graph, int start, int end, Set<Integer> visited) {
         if (start == end) {
             return true;
         }
@@ -37,7 +37,7 @@ class Solution_DFS {
 
         for (int i : graph.get(start)) {
             if (!visited.contains(i)) {
-                if (dfs(n, graph, i, end, visited)) {
+                if (dfs(graph, i, end, visited)) {
                     return true;
                 }
             }

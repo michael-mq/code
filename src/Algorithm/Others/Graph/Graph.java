@@ -8,11 +8,14 @@ public class Graph {
     void dfsTraversing(int[][] graph) {
         int[] visited = new int[graph.length];
 
-        for (int i = 0; i < graph.length; i++) {
-            if (visited[i] == 0) {// 当前顶点没有被访问
-                dfsHelper(i, graph, visited);
-            }
-        }
+//        for (int i = 0; i < graph.length; i++) {
+//            if (visited[i] == 0) {// 当前顶点没有被访问
+//                dfsHelper(i, graph, visited);
+//            }
+//        }
+
+        dfsHelper(0, graph, visited);
+
     }
 
     void dfsHelper(int i, int[][] graph, int[] visited) {
@@ -32,27 +35,28 @@ public class Graph {
         int[] visited = new int[graph.length];
         Queue<Integer> queue = new LinkedList<>();
 
-        for (int i = 0; i < graph.length; i++) {
-            if (visited[i] == 1) {
-                continue;
-            }
+//        for (int i = 0; i < graph.length; i++) {
+//            if (visited[i] == 1) {
+//                continue;
+//            }
 
-            visited[i] = 1;
-            queue.add(i);
+//            queue.add(i);
 
-            while (!queue.isEmpty()) {
-                int cur = queue.poll();
-                System.out.print(cur + " ");
+        queue.add(0);
 
-                for (int j = 0; j < graph.length; j++) {
-                    if (visited[j] != 1 && graph[cur][j] == 1) {
-                        visited[j] = 1;
-                        queue.add(j);
-                    }
+        while (!queue.isEmpty()) {
+            int cur = queue.poll();
+            visited[cur] = 1;
+            System.out.print(cur + " ");
+
+            for (int j = 0; j < graph.length; j++) {
+                if (visited[j] != 1 && graph[cur][j] == 1) {
+                    queue.add(j);
                 }
             }
-
         }
+
+//        }
     }
 
     public static void main(String[] args) {

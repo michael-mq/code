@@ -30,7 +30,7 @@ public class Solution {
     private void helper(char[][] board, int row, List<List<String>> result) {
         // If it has reached the last row
         if (row == board.length) {
-            result.add(builder(board));
+            result.add(build(board));
             return;
         }
 
@@ -57,7 +57,7 @@ public class Solution {
     }
 
     // build solution from temporary chessboard
-    private List<String> builder(char[][] board) {
+    private List<String> build(char[][] board) {
         List<String> tmp = new LinkedList<>();
 
         for (int i = 0; i < board.length; i++) {

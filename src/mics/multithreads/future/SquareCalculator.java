@@ -1,4 +1,4 @@
-package mics.future;
+package mics.multithreads.future;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
