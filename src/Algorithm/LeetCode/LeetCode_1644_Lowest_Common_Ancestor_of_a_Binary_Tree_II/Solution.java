@@ -15,7 +15,6 @@ class TreeNode {
 public class Solution {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         int[] counter = new int[1];
-        counter[0] = 0;
         TreeNode result = _lowestCommonAncestor(root, p, q, counter);
 
         if (counter[0] != 2) {
