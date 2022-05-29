@@ -13,7 +13,7 @@ class Node {
 // According to first solution of 
 // https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-search-tree/solution/er-cha-sou-suo-shu-de-zui-jin-gong-gong-zu-xian-26/
 
-public class Solution_Two_Iteration_MyOwn {
+public class Solution_Two_Pass_MyOwn {
     public Node lowestCommonAncestor(Node p, Node q) {
         List<Node> path_p = getPath(p);
         List<Node> path_q = getPath(q);
