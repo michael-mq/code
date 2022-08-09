@@ -10,7 +10,7 @@ class MinMeetingRoomsII_Greedy_253 {
 
         minHeap.add(intervals[0][1]);
         for (int i = 1; i < intervals.length; i++) {
-            if (intervals[i][0] > minHeap.peek()) {
+            if (intervals[i][0] >= minHeap.peek()) {
                 minHeap.poll();
             }
 
