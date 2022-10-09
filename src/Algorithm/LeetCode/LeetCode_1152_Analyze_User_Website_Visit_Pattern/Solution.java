@@ -2,23 +2,24 @@ package Algorithm.LeetCode.LeetCode_1152_Analyze_User_Website_Visit_Pattern;
 
 import java.util.*;
 
-class Pair {
-    public int time;
-    public String website;
-
-    public Pair(int time, String website) {
-        this.time = time;
-        this.website = website;
-    }
-}
 
 public class Solution {
+    private static class Pair {
+        public int time;
+        public String website;
+
+        public Pair(int time, String website) {
+            this.time = time;
+            this.website = website;
+        }
+    }
+
     public List<String> mostVisitedPattern(String[] username, int[] timestamp, String[] website) {
         Map<String, List<Pair>> userMap = new HashMap<>();
 
         for (int i = 0; i < username.length; i++) {
-            userMap.putIfAbsent(username[i], new ArrayList<>());
-            userMap.get(username[i]).add(new Pair(timestamp[i], website[i]));
+            List<Pair> pairs = userMap.computeIfAbsent(username[i], x -> new ArrayList<>());
+            pairs.add(new Pair(timestamp[i], website[i]));
         }
 
         Map<String, Integer> websiteMap = new HashMap<>();
