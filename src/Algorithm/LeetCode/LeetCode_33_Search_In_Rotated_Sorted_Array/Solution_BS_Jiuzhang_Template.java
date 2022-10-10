@@ -1,4 +1,4 @@
-package Algorithm.LeetCode.LeetCode_704_Binary_Search;
+package Algorithm.LeetCode.LeetCode_33_Search_In_Rotated_Sorted_Array;
 
 public class Solution_BS_Jiuzhang_Template {
     public int search(int[] nums, int target) {
@@ -9,10 +9,18 @@ public class Solution_BS_Jiuzhang_Template {
 
             if (nums[mid] == target) {
                 return mid;
-            } else if (nums[mid] < target) {
-                start = mid;
+            } else if (nums[mid] > nums[start]) {
+                if (target >= nums[start] && target < nums[mid]) {
+                    end = mid;
+                } else {
+                    start = mid;
+                }
             } else {
-                end = mid;
+                if (target > nums[mid] && target <= nums[end]) {
+                    start = mid;
+                } else {
+                    end = mid;
+                }
             }
         }
 

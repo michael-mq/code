@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_34_Find_First_and_Last_Position_of_Element_in_Sorted_Array;
 
-class Solution_Jiuzhang_Template {
+class Solution_BS_Jiuzhang_Template {
     public int[] searchRange(int[] nums, int target) {
         int[] res = new int[]{-1, -1};
 
