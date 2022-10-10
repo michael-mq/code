@@ -32,15 +32,15 @@ public class BinarySearch {
             } else {
                 end = mid;
             }
+        }
 
-            // 要点4: 循环结束后，单独处理start 和end
-            if (nums[start] == target) {
-                return start;
-            }
+        // 要点4: 循环结束后，单独处理start 和end
+        if (nums[start] == target) {
+            return start;
+        }
 
-            if (nums[end] == target) {
-                return end;
-            }
+        if (nums[end] == target) {
+            return end;
         }
 
         return -1;
