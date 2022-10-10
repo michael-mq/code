@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_704_Binary_Search;
 
-public class Solution_New_Template {
+public class Solution_Jiuzhang_Template {
     public int search(int[] nums, int target) {
         int start = 0, end = nums.length - 1;
 
