@@ -1,7 +1,7 @@
 package Algorithm.LeetCode.LeetCode_81_Search_in_Rotated_Sorted_Array_II;
 
 // https://leetcode.cn/problems/search-in-rotated-sorted-array-ii/solution/sou-suo-xuan-zhuan-pai-xu-shu-zu-ii-by-l-0nmp/
-class Solution {
+class Solution_BS_Jiuzhang_Template {
     public boolean search(int[] nums, int target) {
         int start = 0, end = nums.length - 1;
 
