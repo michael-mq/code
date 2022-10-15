@@ -16,10 +16,7 @@ class Solution_BS_Jiuzhang_Template {
             // so we have to keep moving the start until it's not the same as mid anymore
             if (nums[start] == nums[mid]) {
                 start++;
-                continue;
-            }
-
-            if (nums[mid] > nums[start]) {
+            } else if (nums[mid] > nums[start]) {
                 if (target >= nums[start] && target < nums[mid]) {
                     end = mid;
                 } else {
