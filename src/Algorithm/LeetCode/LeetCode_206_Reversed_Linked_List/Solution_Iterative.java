@@ -5,24 +5,28 @@ package Algorithm.LeetCode.LeetCode_206_Reversed_Linked_List;
 
 public class Solution_Iterative {
     public ListNode reverseList(ListNode head) {
-        ListNode prev = null;
-        ListNode curr = head;
+        // No need to check the edge case
+//        if (head == null || head.next == null) {
+//            return head;
+//        }
 
-        while (curr != null) {
-            ListNode temp = curr.next;
-            curr.next = prev; // MOST IMPORTANT PART
-            prev = curr;
-            curr = temp;
+        ListNode pre = null;
+
+        while (head != null) {
+            ListNode temp = head.next;
+            head.next = pre;
+            pre = head;
+            head = temp;
         }
 
-        return prev;
+        return pre;
     }
 
     public static void main(String[] args) {
         Solution_Iterative solution_iterative = new Solution_Iterative();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        ListNode result =solution_iterative.reverseList(head);
+        ListNode result = solution_iterative.reverseList(head);
 
         while (result != null) {
             System.out.println(result.val);

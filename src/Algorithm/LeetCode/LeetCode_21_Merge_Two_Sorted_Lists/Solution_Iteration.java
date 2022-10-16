@@ -11,7 +11,7 @@ public class Solution_Iteration {
             return l1;
         }
 
-        ListNode head = new ListNode(-1);
+        ListNode head = new ListNode(-101);
         ListNode dummy = head;
 
         while (l1 != null && l2 != null) {
