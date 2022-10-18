@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_234_Palindrome_Linked_List;
 
-public class Solution_Recursion {
+public class Solution_Recursive {
     private ListNode frontPointer;
 
     public boolean isPalindrome(ListNode head) {
@@ -26,7 +26,7 @@ public class Solution_Recursion {
     }
 
     public static void main(String[] args) {
-        Solution_Recursion solutionStack = new Solution_Recursion();
+        Solution_Recursive solutionStack = new Solution_Recursive();
 
         ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         System.out.println(solutionStack.isPalindrome(head));

@@ -18,7 +18,7 @@ class ListNode {
     }
 }
 
-class Solution {
+class Solution_Iterative {
     public ListNode removeElements(ListNode head, int val) {
         ListNode dummyHead = new ListNode(0);
         dummyHead.next = head;

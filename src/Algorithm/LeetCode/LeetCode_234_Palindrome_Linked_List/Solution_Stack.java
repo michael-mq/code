@@ -18,7 +18,7 @@ public class Solution_Stack {
         }
 
         while (!stack.isEmpty()) {
-            if (stack.pop() == head.val) {
+            if (stack.pop() != head.val) {
                 return false;
             }
 
