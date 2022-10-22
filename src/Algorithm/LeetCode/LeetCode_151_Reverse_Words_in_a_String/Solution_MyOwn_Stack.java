@@ -11,11 +11,8 @@ class Solution_MyOwn_Stack {
 
         s = s.trim();
 
-        for (int i = 0; i <= s.length(); i++) {
-            if (i == s.length()) {
-                stack.push(s.substring(pointer, i));
-                break;
-            } else if (s.charAt(i) == ' ') {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
                 stack.push(s.substring(pointer, i));
             }
 
@@ -25,6 +22,7 @@ class Solution_MyOwn_Stack {
             }
         }
 
+        stack.push(s.substring(pointer, s.length()));
         int size = stack.size();
 
         for (int i = 0; i < size; i++) {

@@ -6,17 +6,11 @@ import java.util.Deque;
 class Solution_MyOwn_Deque {
     public String reverseWords(String s) {
         Deque<String> queue = new ArrayDeque<>();
-        StringBuilder stringBuilder = new StringBuilder();
-
         int pointer = 0;
-
         s = s.trim();
 
-        for (int i = 0; i <= s.length(); i++) {
-            if (i == s.length()) {
-                queue.offerFirst(s.substring(pointer, i));
-                break;
-            } else if (s.charAt(i) == ' ') {
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ' ') {
                 queue.offerFirst(s.substring(pointer, i));
             }
 
@@ -25,6 +19,8 @@ class Solution_MyOwn_Deque {
                 pointer = i;
             }
         }
+
+        queue.offerFirst(s.substring(pointer, s.length()));
 
         return String.join(" ", queue);
     }

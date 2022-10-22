@@ -63,8 +63,7 @@ class Solution_1 {
             // 翻转单词
             reverse(sb, start, end - 1);
             // 更新start，去找下一个单词
-            start = end + 1;
-            ++end;
+            start = ++end;
         }
     }
 }
