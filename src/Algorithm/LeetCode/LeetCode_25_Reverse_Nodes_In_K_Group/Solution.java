@@ -45,13 +45,13 @@ class Solution {
 
         ListNode result, head;
 
-        head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
-        result = foo.reverseKGroup(head, 3);
-
-        while (result != null) {
-            System.out.println(result.val);
-            result = result.next;
-        }
+//        head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
+//        result = foo.reverseKGroup(head, 3);
+//
+//        while (result != null) {
+//            System.out.println(result.val);
+//            result = result.next;
+//        }
 
         head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
         result = foo.reverseKGroup(head, 2);
