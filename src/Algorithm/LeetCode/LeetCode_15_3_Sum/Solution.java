@@ -13,7 +13,7 @@ class Solution {
 
         Arrays.sort(nums); // 排序
 
-        for (int i = 0; i < len; i++) {
+        for (int i = 0; i < len; i++) { // or i < len - 2
             if (nums[i] > 0) break; // 如果当前数字大于0，则三数之和一定大于0，所以结束循环
 
             if (i > 0 && nums[i] == nums[i - 1]) continue; // 去重

@@ -11,7 +11,7 @@ class Solution_Sort_Two_Pointer {
         List<List<Integer>> results = new ArrayList<>();
 
         for (int i = 0; i < nums.length - 2; i++) {
-            int target = 0 - nums[i];
+            int target = -nums[i];
 
             int low = i + 1;
             int high = nums.length - 1;
