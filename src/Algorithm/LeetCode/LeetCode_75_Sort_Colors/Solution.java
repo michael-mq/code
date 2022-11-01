@@ -5,7 +5,7 @@ public class Solution {
     public void sortColors(int[] nums) {
         int len = nums.length;
 
-        if (nums == null && len < 2)
+        if (len < 2)
             return;
 
         int zero = -1;
