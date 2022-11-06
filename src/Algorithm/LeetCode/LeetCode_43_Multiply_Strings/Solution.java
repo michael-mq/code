@@ -22,10 +22,6 @@ class Solution {
                 int sum = n1 * n2 + res[pos1] * 10 + res[pos2];
                 res[pos1] = sum / 10;
                 res[pos2] = sum % 10;
-
-//                int sum = n1 * n2 + res[pos2];
-//                res[pos2] = sum % 10;
-//                res[pos1] += sum / 10;
             }
         }
 
