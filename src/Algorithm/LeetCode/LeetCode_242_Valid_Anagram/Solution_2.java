@@ -17,6 +17,7 @@ public class Solution_2 {
             int index = t.charAt(i) - 'a';
             table[index]--;
 
+            // * `s` and `t` have the same length
             // if any character's occurrence is less than 0
             // it means this character is either not existing in `s`
             // or appeared more than the occurrence in `s`
