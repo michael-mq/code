@@ -1,5 +1,6 @@
-package Algorithm.LeetCode.Offer_05;
+package Algorithm.LeetCode.CN.Offer_05;
 
+// https://leetcode.cn/problems/ti-huan-kong-ge-lcof/
 class Solution {
     public String replaceSpace(String s) {
         if (s == null || s.length() == 0) {

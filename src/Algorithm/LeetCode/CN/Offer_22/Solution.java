@@ -1,6 +1,4 @@
-package Algorithm.LeetCode.Offer_22;
-
-import java.util.List;
+package Algorithm.LeetCode.CN.Offer_22;
 
 class ListNode {
     int val;
@@ -11,6 +9,7 @@ class ListNode {
     }
 }
 
+// https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
 class Solution {
     public ListNode getKthFromEnd(ListNode head, int k) {
         if (k == 1) {
