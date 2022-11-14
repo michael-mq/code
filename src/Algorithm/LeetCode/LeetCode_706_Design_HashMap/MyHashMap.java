@@ -26,7 +26,7 @@ class MyHashMap {
     }
 
     private static final int BASE = 769;
-    private LinkedList<Pair>[] data;
+    private final LinkedList<Pair>[] data;
 
     /**
      * Initialize your data structure here.
