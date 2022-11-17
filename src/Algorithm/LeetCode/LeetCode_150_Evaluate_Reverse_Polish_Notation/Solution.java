@@ -38,6 +38,7 @@ class Solution {
                 }
                 default:
                     stack.push(Integer.parseInt(s));
+//                    stack.push(Integer.valueOf(s));
                     break;
             }
         }
