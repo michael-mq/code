@@ -61,6 +61,7 @@ public class Codec_BFS {
                 parent.right = null;
             }
         }
+
         return root;
     }
 }
