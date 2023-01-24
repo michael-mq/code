@@ -3,7 +3,7 @@ package Algorithm.LeetCode.LeetCode_994_Rotting_Oranges;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Solution {
+class Solution_BFS {
     public int orangesRotting(int[][] grid) {
         if (grid == null || grid.length == 0) {
             return -1;
