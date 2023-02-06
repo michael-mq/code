@@ -16,18 +16,20 @@ class Solution {
         return result;
     }
 
-    private void dfs(int[] candidates, int target, int start, List<Integer> path, List<List<Integer>> result) {
+    private void dfs(int[] candidates, int target, int begin, List<Integer> path, List<List<Integer>> result) {
         if (target == 0) {
             result.add(new ArrayList<>(path));
             return;
         }
 
-        if (target < 0) {
-            return;
-        }
+        for (int i = begin; i < candidates.length; i++) {
+            // 大剪枝：减去 candidates[i] 小于 0，减去后面的 candidates[i + 1]、candidates[i + 2] 肯定也小于 0，因此用 break
+            if (target - candidates[i] < 0) {
+                break;
+            }
 
-        for (int i = start; i < candidates.length; i++) {
-            if (i > start && candidates[i] == candidates[i - 1]) {
+            // 小剪枝：同一层相同数值的结点，从第 2 个开始，候选数更少，结果一定发生重复，因此跳过，用 continue
+            if (i > begin && candidates[i] == candidates[i - 1]) {
                 continue;
             }
 
