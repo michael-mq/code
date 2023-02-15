@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_55_Jump_Game;
 
-class Solution {
+class Solution_Greedy {
     public boolean canJump(int[] nums) {
         int reach = 0;
 
