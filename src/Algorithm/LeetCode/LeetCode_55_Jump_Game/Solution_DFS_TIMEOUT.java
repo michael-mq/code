@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_55_Jump_Game;
 
-class Solution_DFS_TIMEOUT {
+class Solution_DFS_TIMEOUT  {
     public boolean canJump(int[] nums) {
         return dfs(0, nums);
     }

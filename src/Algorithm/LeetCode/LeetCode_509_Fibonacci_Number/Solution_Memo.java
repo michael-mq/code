@@ -28,3 +28,28 @@ public class Solution_Memo {
         System.out.println(foo.fib(4));
     }
 }
+
+//class Solution {
+//    private int[] memo;
+//
+//    public int fib(int n) {
+//        if (n <= 1) {
+//            return n;
+//        }
+//
+//        memo = new int[n + 1];
+//        Arrays.fill(memo, -1);
+//        memo[0] = 0;
+//        memo[1] = 1;
+//
+//        return helper(n);
+//    }
+//
+//    private int helper(int n) {
+//        if (memo[n] == -1) {
+//            return helper(n - 1) + helper(n - 2);
+//        }
+//
+//        return memo[n];
+//    }
+//}
