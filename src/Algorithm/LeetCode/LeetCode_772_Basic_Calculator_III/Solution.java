@@ -30,7 +30,7 @@ class Solution {
                     j++;
                 }
 
-                number = calculate(s.substring(i + 1, j));
+                number = calculate(s.substring(i + 1, j - 1));
                 i = j - 1;
             }
 
