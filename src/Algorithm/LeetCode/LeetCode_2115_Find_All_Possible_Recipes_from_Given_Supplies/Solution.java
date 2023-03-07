@@ -6,7 +6,11 @@ class Solution {
     public List<String> findAllRecipes(String[] recipes, List<List<String>> ingredients, String[] supplies) {
         /**
          * 将原材料也看成是一个菜，这样才可以用一个图来描述 ingredients
-         * 所以，真正的菜是 recipes + supplies
+         * 所以，真正的菜是 recipes + supplies ????
+         */
+        /**
+         * 将菜也看成原材料，这样才可以用一个图来描述 ingredients
+         * 所以，真正的原材料是 recipes + supplies
          */
         List<String> allRecipes = new ArrayList<>();
         allRecipes.addAll(Arrays.asList(recipes));
@@ -15,7 +19,7 @@ class Solution {
          * degree 记录每个菜的入度
          * graph 将 ingredients 转化成图
          */
-        int[] degree = new int[allRecipes.size()];
+        int[] inDegree = new int[allRecipes.size()];
         Map<String, List<String>> graph = new HashMap<>();
 
         for (int i = 0; i < ingredients.size(); i++) {
@@ -39,7 +43,7 @@ class Solution {
             /**
              * 这个菜的入度，就是 ingredients 中这个菜的大小
              */
-            degree[i] = ingredients.get(i).size();
+            inDegree[i] = ingredients.get(i).size();
         }
         /**
          * map 存储各个菜 和 对应在 allRecipes 中的下标
@@ -57,8 +61,8 @@ class Solution {
          * 将入度为 0 的菜先放入队列，说明这些菜可以直接使用
          */
         Queue<String> queue = new LinkedList<>();
-        for (int i = 0; i < degree.length; i++) {
-            if (degree[i] == 0) {
+        for (int i = 0; i < inDegree.length; i++) {
+            if (inDegree[i] == 0) {
                 queue.offer(allRecipes.get(i));
             }
         }
@@ -77,8 +81,8 @@ class Solution {
             if (graph.containsKey(poll)) {
                 for (String next : graph.get(poll)) {
                     int nextIndex = map.get(next);
-                    degree[nextIndex]--;
-                    if (degree[nextIndex] == 0) {
+                    inDegree[nextIndex]--;
+                    if (inDegree[nextIndex] == 0) {
                         queue.offer(next);
                     }
                 }
