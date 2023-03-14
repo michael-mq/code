@@ -30,8 +30,6 @@ class Solution {
                 int row = room[0];
                 int col = room[1];
 
-                // rooms[row][col] = dist;
-
                 for (int[] d : DIRECTIONS) {
                     int newRow = row + d[0];
                     int newCol = col + d[1];
