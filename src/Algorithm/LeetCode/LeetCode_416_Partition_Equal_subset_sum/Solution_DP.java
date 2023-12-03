@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_416_Partition_Equal_subset_sum;
 
-public class Solution {
+public class Solution_DP {
     public boolean canPartition(int[] nums) {
         int len = nums.length;
         // 题目已经说非空数组，可以不做非空判断
