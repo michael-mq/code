@@ -1,8 +1,8 @@
-package Algorithm.programmercarl;
+package Algorithm.programmercarl.Knapsack_01;
 
 import java.util.Arrays;
 //https://www.programmercarl.com/背包理论基础01背包-1.html#其他语言版本
-public class BagProblem_2 {
+public class Knapsack_01_2 {
     public static void main(String[] args) {
         int[] weight = {1,3,4};
         int[] value = {15,20,30};

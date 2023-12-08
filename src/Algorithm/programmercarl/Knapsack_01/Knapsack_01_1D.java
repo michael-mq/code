@@ -1,7 +1,7 @@
-package Algorithm.programmercarl;
+package Algorithm.programmercarl.Knapsack_01;
 
 //https://www.programmercarl.com/背包理论基础01背包-2.html#总结
-public class BagProblem_1D_array {
+public class Knapsack_01_1D {
     public static void main(String[] args) {
         int[] weight = {1, 3, 4};
         int[] value = {15, 20, 30};
