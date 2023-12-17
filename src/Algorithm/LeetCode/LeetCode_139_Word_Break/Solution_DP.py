@@ -1,6 +1,6 @@
 from typing import List
 
-
+# https://www.programmercarl.com/0139.单词拆分.html
 class Solution:
     def wordBreak(self, s: str, wordDist: List[str]) -> bool:
         wordSet = set(wordDist)
