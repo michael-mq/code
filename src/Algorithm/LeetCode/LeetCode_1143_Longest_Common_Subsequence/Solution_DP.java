@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_1143_Longest_Common_Subsequence;// https://leetcode-cn.com/problems/longest-common-subsequence/solution/fu-xue-ming-zhu-er-wei-dong-tai-gui-hua-r5ez6/
 
-class Solution {
+class Solution_DP {
     public int longestCommonSubsequence(String text1, String text2) {
         int M = text1.length();
         int N = text2.length();
