@@ -1,3 +1,6 @@
+from typing import List
+
+
 # https://www.programmercarl.com/0496.下一个更大元素I.html
 class Solution:
     def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
@@ -13,4 +16,3 @@ class Solution:
             stack.append(i)
 
         return result
-
