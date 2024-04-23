@@ -19,12 +19,11 @@ public class Solution_DFS_MyOwn {
         }
 
         List<Integer> list = res.get(level);
+        list.add(root.val);
 
         if (root.left != null) {
             dfs(root.left, level + 1, res);
         }
-
-        list.add(root.val);
 
         if (root.right != null) {
             dfs(root.right, level + 1, res);
