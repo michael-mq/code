@@ -40,12 +40,7 @@ class Solution_DFS {
             res = true;
         }
 
-        if (root.left != null) {
-            dfs(root.left, sum, targetSum);
-        }
-
-        if (root.right != null) {
-            dfs(root.right, sum, targetSum);
-        }
+        dfs(root.left, sum, targetSum);
+        dfs(root.right, sum, targetSum);
     }
 }
