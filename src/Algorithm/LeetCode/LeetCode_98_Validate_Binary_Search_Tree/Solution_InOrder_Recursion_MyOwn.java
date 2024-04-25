@@ -23,15 +23,9 @@ public class Solution_InOrder_Recursion_MyOwn {
             return;
         }
 
-        if (root.left != null) {
-            dfs(root.left, list);
-        }
-
+        dfs(root.left, list);
         list.add(root);
-
-        if (root.right != null) {
-            dfs(root.right, list);
-        }
+        dfs(root.right, list);
     }
 
     public static void main(String[] args) {
