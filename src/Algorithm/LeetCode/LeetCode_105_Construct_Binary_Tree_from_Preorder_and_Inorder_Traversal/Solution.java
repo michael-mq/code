@@ -53,6 +53,12 @@ class Solution {
 
         root.right = build(preorder, preStart + leftSize + 1, preEnd,
                 inorder, index + 1, inEnd);
+
+//        root.left = build(preorder, preStart + 1, preStart + leftSize,
+//                inorder, inStart, inStart + leftSize - 1);
+//        root.right = build(preorder, preStart + leftSize + 1, preEnd,
+//                inorder, inStart + leftSize + 1, inEnd);
+
         return root;
     }
 }
