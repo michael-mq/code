@@ -2,22 +2,16 @@ package Algorithm.LeetCode.LeetCode_450_Delete_Node_in_a_BST;
 
 
 class TreeNode {
-
     int val;
-
     TreeNode left;
-
     TreeNode right;
-
 
     TreeNode() {
     }
 
-
     TreeNode(int val) {
         this.val = val;
     }
-
 
     TreeNode(int val, TreeNode left, TreeNode right) {
         this.val = val;
@@ -35,8 +29,8 @@ class Solution {
             if (root.right == null) return root.left;
             // 处理情况 3
             TreeNode minNode = getMin(root.right);
-            root.val = minNode.val;
-            root.right = deleteNode(root.right, minNode.val);
+            root.val = minNode.val; // Replace the deleted node with the "next minimum node"
+            root.right = deleteNode(root.right, minNode.val); // then delete the "next minimum node"
         } else if (root.val > key) {
             root.left = deleteNode(root.left, key);
         } else if (root.val < key) {
