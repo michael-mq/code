@@ -6,6 +6,7 @@ import java.util.Deque;
 import java.util.List;
 
 //https://leetcode.cn/problems/combinations/solutions/13436/hui-su-suan-fa-jian-zhi-python-dai-ma-java-dai-ma-
+//https://www.programmercarl.com/0077.组合.html
 class Solution {
 
     public List<List<Integer>> combine(int n, int k) {
@@ -28,7 +29,7 @@ class Solution {
 
         // 遍历可能的搜索起点
         for (int i = begin; i <= n; i++) {
-            // 剪枝算法
+            // 剪枝算法 https://www.programmercarl.com/0077.组合优化.html
             // for (int i = begin; i <= n - (k - path.size()) + 1; i++) {
             // 向路径变量里添加一个数
             path.addLast(i);
