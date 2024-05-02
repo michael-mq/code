@@ -29,6 +29,7 @@ public class Solution_BackTrack {
             sum += candidates[i];
 
             // Only works when the candidates is sorted. Think why
+            // https://www.programmercarl.com/0039.组合总和.html#剪枝优化
             // if (sum > target) {
             //     return;
             // }
