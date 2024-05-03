@@ -6,7 +6,7 @@ import java.util.Deque;
 import java.util.List;
 
 // https://leetcode-cn.com/problems/palindrome-partitioning/solution/hui-su-you-hua-jia-liao-dong-tai-gui-hua-by-liweiw/
-class Solution {
+class Solution_BackTrack_DP {
     public List<List<String>> partition(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
         List<List<String>> result = new ArrayList<>();
@@ -28,6 +28,7 @@ class Solution {
     private void dfs(String s, int index, Deque<String> path, List<List<String>> result, boolean[][] dp) {
         if (index == s.length()) {
             result.add(new ArrayList<>(path));
+//            return;
         }
 
         for (int i = index; i < s.length(); i++) {
@@ -42,7 +43,7 @@ class Solution {
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Solution_BackTrack_DP solution = new Solution_BackTrack_DP();
 
         solution.partition("aab");
     }
