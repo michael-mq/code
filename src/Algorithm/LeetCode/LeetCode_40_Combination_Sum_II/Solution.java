@@ -6,38 +6,35 @@ import java.util.List;
 
 class Solution {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
-        List<List<Integer>> result = new ArrayList<>();
-        List<Integer> path = new ArrayList<>();
-
+        List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(candidates);
+        backtrack(candidates, target, 0, 0, new ArrayList<>(), res);
 
-        dfs(candidates, target, 0, path, result);
-
-        return result;
+        return res;
     }
 
-    private void dfs(int[] candidates, int target, int begin, List<Integer> path, List<List<Integer>> result) {
-        if (target == 0) {
-            result.add(new ArrayList<>(path));
+    private void backtrack(int[] candidates, int target, int startIndex, int sum, List<Integer> path, List<List<Integer>> res) {
+        if (sum == target) {
+            res.add(new ArrayList<>(path));
             return;
         }
 
-        for (int i = begin; i < candidates.length; i++) {
-            // 大剪枝：减去 candidates[i] 小于 0，减去后面的 candidates[i + 1]、candidates[i + 2] 肯定也小于 0，因此用 break
-            if (target - candidates[i] < 0) {
-                break;
+        for (int i = startIndex; i < candidates.length; i++) {
+            sum += candidates[i];
+
+            if (sum > target) {
+                return;
             }
 
-            // 小剪枝：同一层相同数值的结点，从第 2 个开始，候选数更少，结果一定发生重复，因此跳过，用 continue
-            if (i > begin && candidates[i] == candidates[i - 1]) {
+            if (i > startIndex && candidates[i - 1] == candidates[i]) {
+                sum -= candidates[i];
                 continue;
             }
 
             path.add(candidates[i]);
-
-            dfs(candidates, target - candidates[i], i + 1, path, result);
-
+            backtrack(candidates, target, i + 1, sum, path, res);
             path.remove(path.size() - 1);
+            sum -= candidates[i];
         }
     }
 }
