@@ -9,14 +9,18 @@ class MKAverage {
     private int m, k;
     private long sum;
     private int sizeLo, sizeHi;
-    private Deque<Integer> q = new ArrayDeque<>();
-    private TreeMap<Integer, Integer> lo = new TreeMap<>();
-    private TreeMap<Integer, Integer> mid = new TreeMap<>();
-    private TreeMap<Integer, Integer> hi = new TreeMap<>();
+    private final Deque<Integer> q;
+    private final TreeMap<Integer, Integer> lo;
+    private final TreeMap<Integer, Integer> mid;
+    private final TreeMap<Integer, Integer> hi;
 
     public MKAverage(int m, int k) {
         this.m = m;
         this.k = k;
+        q = new ArrayDeque<>();
+        lo = new TreeMap<>();
+        mid = new TreeMap<>();
+        hi = new TreeMap<>();
     }
 
     public void addElement(int num) {
