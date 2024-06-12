@@ -21,8 +21,8 @@ public class UniFind_LeetCode {
             return x;
         }
         // Some ranks may become obsolete so they are not updated
-        // return root[x] = find(root[x]);
         return find(root[x]);
+        // return root[x] = find(root[x]);
     }
 
     // The union function with union by rank
