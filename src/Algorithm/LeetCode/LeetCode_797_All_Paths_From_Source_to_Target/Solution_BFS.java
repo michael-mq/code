@@ -7,33 +7,30 @@ import java.util.Queue;
 
 class Solution_BFS {
     public List<List<Integer>> allPathsSourceTarget(int[][] graph) {
-        List<List<Integer>> paths = new ArrayList<>();
-        if (graph == null || graph.length == 0) {
-            return paths;
-        }
+        List<List<Integer>> res = new ArrayList<>();
+        List<Integer> path = new ArrayList<>();
 
-        Queue<LinkedList<Integer>> queue = new LinkedList<>();
-        LinkedList<Integer> path = new LinkedList<>();
+        Queue<List<Integer>> queue = new LinkedList<>();
+
         path.add(0);
         queue.add(path);
 
         while (!queue.isEmpty()) {
-            LinkedList<Integer> currentPath = queue.poll();
-            int node = currentPath.getLast();
+            List<Integer> curPath = queue.poll();
+            int i = curPath.get(curPath.size() - 1);
 
-            for (int nextNode : graph[node]) {
-                LinkedList<Integer> tmpPath = new LinkedList<>(currentPath);
-                tmpPath.add(nextNode);
+            for (int j : graph[i]) {
+                List<Integer> tmpPath = new ArrayList<>(curPath);
+                tmpPath.add(j);
 
-                if (nextNode == graph.length - 1) {
-                    paths.add(new LinkedList<>(tmpPath));
+                if (j == graph.length - 1) {
+                    res.add(new ArrayList<>(tmpPath));
                 } else {
-                    queue.add(new LinkedList<>(tmpPath));
+                    queue.add(new ArrayList<>(tmpPath));
                 }
             }
-
         }
 
-        return paths;
+        return res;
     }
 }
