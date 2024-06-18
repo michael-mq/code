@@ -7,7 +7,7 @@ class Solution_Backtracking {
     private List<String> result = new ArrayList();
 
     public List<String> binaryTreePaths(TreeNode root) {
-        backTracking(root, new ArrayList());
+        backTracking(root, new ArrayList<>());
         return result;
     }
 

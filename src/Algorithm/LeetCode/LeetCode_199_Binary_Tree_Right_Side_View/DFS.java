@@ -27,6 +27,4 @@ public class DFS {
         dfs(root.right, depth, res);
         dfs(root.left, depth, res);
     }
-
-
 }
