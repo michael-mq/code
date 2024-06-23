@@ -34,9 +34,7 @@ class Solution {
                     char arr[] = word.toCharArray();
 
                     for (int k = 'a'; k <= 'z'; k++) {
-
                         arr[j] = (char) k;
-
                         String str = new String(arr);
 
                         if (set.contains(str)) {
