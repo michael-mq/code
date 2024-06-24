@@ -2,15 +2,11 @@ package Algorithm.LeetCode.LeetCode_207_Course_Schedule;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//https://leetcode.cn/problems/course-schedule/solutions/18806/course-schedule-tuo-bu-pai-xu-bfsdfsliang-chong-fa/
 class Solution_DFS {
-    int[] visited;
-    boolean valid;
-    List<List<Integer>> edges;
-
     public boolean canFinish(int numCourses, int[][] prerequisites) {
-        visited = new int[numCourses];
-        edges = new ArrayList<>();
+        int[] visited = new int[numCourses];
+        List<List<Integer>> edges = new ArrayList<>();
 
         for (int i = 0; i < numCourses; i++) {
             edges.add(new ArrayList<>());
@@ -21,11 +17,7 @@ class Solution_DFS {
         }
 
         for (int i = 0; i < numCourses; i++) {
-            if (visited[i] == 0) {
-                dfs(i);
-            }
-
-            if (!valid) {
+            if (!dfs(i, visited, edges)) {
                 return false;
             }
         }
@@ -33,23 +25,25 @@ class Solution_DFS {
         return true;
     }
 
-    private void dfs(int u) {
-        visited[u] = 1;
+    private boolean dfs(int i, int[] visited, List<List<Integer>> edges) {
+        if (visited[i] == 1) {
+            return false;
+        }
 
-        for(int v: edges.get(u)) {
-            if (visited[v] == 0) {
-                dfs(v);
+        if (visited[i] == -1) {
+            return true;
+        }
 
-                if (!valid) {
-                    return;
-                }
-            } else if (visited[v] == 1) {
-                valid = false;
+        visited[i] = 1;
 
-                return;
+        for(int j: edges.get(i)) {
+            if (!dfs(j, visited, edges)) {
+                return false;
             }
         }
 
-        visited[u] = 2;
+        visited[i] = -1;
+
+        return true;
     }
 }
