@@ -6,6 +6,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Solution implements Serializable {
+    public class TrieNode {
+        String word;
+        TrieNode[] links = new TrieNode[26];
+    }
+
     public List<String> findWords(char[][] board, String[] words) {
         List<String> result = new ArrayList<>();
         TrieNode root = buildTrie(words);
