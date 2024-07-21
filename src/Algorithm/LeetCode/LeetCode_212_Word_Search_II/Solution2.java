@@ -56,10 +56,6 @@ public class Solution2 implements Serializable {
     private void dfs(char[][] board, int i, int j, TrieNode root, List<String> result) {
         char c = board[i][j];
 
-        if (c == '#') {
-            return;
-        }
-
         root = root.children[c - 'a'];
 
         if (root == null) {
@@ -69,11 +65,8 @@ public class Solution2 implements Serializable {
         if (root.word != null) {
             result.add(root.word);
             root.word = null;
-
-            return;
         }
 
-        char temp = board[i][j];
         board[i][j] = '#';
 
         int[][] directions = new int[][]{{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
@@ -89,7 +82,7 @@ public class Solution2 implements Serializable {
             }
         }
 
-        board[i][j] = temp;
+        board[i][j] = c;
     }
 
     public static void main(String[] args) {
