@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_70_Climbing_Stairs;
 
-public class Solution {
+public class Solution_DP1 {
     public int climbStairs(int n) {
         if (n <= 2) {
             return n;
@@ -19,7 +19,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution foo = new Solution();
+        Solution_DP1 foo = new Solution_DP1();
 
         System.out.println(foo.climbStairs(2));
         System.out.println(foo.climbStairs(3));

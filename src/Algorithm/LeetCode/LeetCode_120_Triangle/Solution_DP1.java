@@ -3,6 +3,7 @@ package Algorithm.LeetCode.LeetCode_120_Triangle;
 import java.util.ArrayList;
 import java.util.List;
 
+// https://leetcode.cn/problems/triangle/solutions/329394/di-gui-ji-yi-hua-dp-bi-xu-miao-dong-by-sweetiee/
 public class Solution_DP1 {
     public int minimumTotal(List<List<Integer>> triangle) {
         int n = triangle.size();
