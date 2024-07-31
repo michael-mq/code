@@ -1,6 +1,5 @@
 package Algorithm.LeetCode.LeetCode_174_Dungeon_Game;
 
-// https://www.cspiration.com/#/course/video?courseId=26&superType=1&courseName=LeetCode%20题目视频讲解（1-300题分类顺序版）&userCourseId=2534
 //https://leetcode.cn/problems/dungeon-game/solutions/24493/cong-hui-su-dao-ji-yi-hua-sou-suo-dao-dong-tai-gui/
 class Solution {
     public int calculateMinimumHP(int[][] dungeon) {
