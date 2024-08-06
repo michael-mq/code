@@ -5,9 +5,9 @@ package Algorithm.LeetCode.LeetCode_72_Edit_Distance;
  * ------------------------------
  * '' |  0 | 1 | 2 | 3
  *  h |  1 | 1 | 2 | 3
- *  o |  2 | 2 |'1'| 2
- *  r |  3 |'2'| 2 | 2
- *  s |  4 | 3 | 3 |'2'
+ *  o |  2 | 2 | 1 | 2
+ *  r |  3 | 2 | 2 | 2
+ *  s |  4 | 3 | 3 | 2
  *  e |  5 | 4 | 4 | 3
  */
 
@@ -20,7 +20,7 @@ public class Solution_DP {
             return len1 + len2;
         }
 
-        int[][] dp = new int[len1 + 1][len2 + 2];
+        int[][] dp = new int[len1 + 1][len2 + 1];
 
         // 边界状态初始化
         for (int i = 0; i <= len1; i++) {
