@@ -3,7 +3,6 @@ package Algorithm.LeetCode.LeetCode_5_Longest_Palindromic_Substring;
 public class Solution_DP {
     public String longestPalindrome(String s) {
         boolean[][] dp = new boolean[s.length()][s.length()];
-        String res = "";
         int start = 0;
         int maxLength = 0;
 
