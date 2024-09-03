@@ -3,6 +3,7 @@ package Algorithm.LeetCode.LeetCode_95_Unique_Binary_Search_Trees_II;
 import java.util.ArrayList;
 import java.util.List;
 
+//https://leetcode.cn/problems/unique-binary-search-trees-ii/solutions/331067/cong-gou-jian-dan-ke-shu-dao-gou-jian-suo-you-shu-/
 class TreeNode {
     int val;
     TreeNode left;
@@ -22,7 +23,7 @@ class TreeNode {
     }
 }
 
-class Solution {
+class Solution_Recursive {
     /* 主函数 */
     public List<TreeNode> generateTrees(int n) {
         if (n == 0) return new ArrayList<>();
