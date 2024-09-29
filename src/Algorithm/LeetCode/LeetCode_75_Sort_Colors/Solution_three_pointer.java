@@ -12,9 +12,9 @@ public class Solution_three_pointer {
             if (nums[i] == 0) {
                 swap(nums, i, left);
                 left++;
-                // i moves because
                 // 1. `i` comes from the left
-                // 2. `i` is at the same or further place than `left`
+                // 2. the only time when nums[left] can be 0 is when i == left
+                // 3. otherwise, nums[left] won't be 0
             } else if (nums[i] == 2) {
                 swap(nums, i, right);
                 right--;
