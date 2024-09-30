@@ -41,6 +41,25 @@ public class Solution_MyOwn {
         }
 
         return res;
-        // return new ArrayList<List<String>>(map.values());
     }
 }
+
+
+//class Solution {
+//    public List<List<String>> groupAnagrams(String[] strs) {
+//        List<List<String>> res = new ArrayList<>();
+//        Map<String, List<String>> map = new HashMap<>();
+//
+//        for (String str : strs) {
+//            char[] charArr = str.toCharArray();
+//            Arrays.sort(charArr);
+//            String sortedStr = new String(charArr);
+//            List<String> list = map.computeIfAbsent(sortedStr, k -> new ArrayList<>());
+//            list.add(str);
+//        }
+//
+//        res = new ArrayList<>(map.values());
+//
+//        return res;
+//    }
+//}

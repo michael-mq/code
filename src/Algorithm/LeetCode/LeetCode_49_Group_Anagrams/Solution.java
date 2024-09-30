@@ -20,6 +20,7 @@ class Solution {
             for (int i = 0; i < 26; i++) {
                 if (counts[i] != 0) {
                     sb.append((char) ('a' + i));
+                    // sb.append('#');
                     sb.append(counts[i]);
                 }
             }
