@@ -22,6 +22,7 @@ class Solution_BS_Jiuzhang_Template {
             }
         }
 
+        // `end` first
         if (nums[end] == target) {
             res[0] = end;
         }
@@ -45,6 +46,7 @@ class Solution_BS_Jiuzhang_Template {
             }
         }
 
+//        `start` first
         if (nums[start] == target) {
             res[1] = start;
         }
