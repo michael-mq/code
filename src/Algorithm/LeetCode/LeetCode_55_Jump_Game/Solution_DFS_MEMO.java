@@ -2,6 +2,7 @@ package Algorithm.LeetCode.LeetCode_55_Jump_Game;
 
 import java.util.Arrays;
 
+//https://leetcode.com/problems/jump-game/editorial/#approach-2-dynamic-programming-top-down
 class Solution_DFS_MEMO {
     public boolean canJump(int[] nums) {
         int[] memo = new int[nums.length];
@@ -18,7 +19,7 @@ class Solution_DFS_MEMO {
         if (index == nums.length - 1) {
             return true;
         }
-        
+
         for (int i = index + 1; i <= Math.min(index + nums[index], nums.length - 1); i++) {
             if (dfs(nums, i, memo)) {
                 memo[i] = 1;
