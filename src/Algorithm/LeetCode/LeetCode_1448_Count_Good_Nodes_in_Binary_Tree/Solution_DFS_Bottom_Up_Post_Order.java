@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_1448_Count_Good_Nodes_in_Binary_Tree;
 
-
+//https://youtu.be/WzsunIWpXJg?si=1W4XWmyPG5c3rVhf&t=6341
 class TreeNode {
     int val;
     TreeNode left;
