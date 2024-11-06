@@ -23,6 +23,7 @@ class TreeNode {
 }
 
 // https://www.youtube.com/watch?v=f072MAkKaNo
+// https://leetcode.com/problems/find-leaves-of-binary-tree/editorial/#approach-2-dfs-depth-first-search-without-sorting
 class Solution {
     public List<List<Integer>> findLeaves(TreeNode root) {
         List<List<Integer>> res = new ArrayList<>();
