@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_975_Odd_Even_Jump;
 
-class Solution_MyOwn_BruteForce_TimeOut {
+class Solution_MyOwn_BruteForce {
     public int oddEvenJumps(int[] arr) {
         int res = 0;
         boolean[] shouldBreak = new boolean[1];
