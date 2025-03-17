@@ -24,7 +24,7 @@ class Solution_Sort_Two_Pointer_2 {
             int right = nums.length - 1;
 
             while (right > left) {
-                int sum = nums[i] + left + right;
+                int sum = nums[i] + nums[left] + nums[right];
 
                 if (sum > 0) {
                     right--;
