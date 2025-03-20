@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_31_Next_Permutation;
 
-// https://leetcode-cn.com/problems/next-permutation/solution/xia-yi-ge-pai-lie-by-leetcode-solution/
+// https://leetcode.cn/problems/next-permutation/solutions/80560/xia-yi-ge-pai-lie-suan-fa-xiang-jie-si-lu-tui-dao-/
 class Solution {
     public void nextPermutation(int[] nums) {
         int i = nums.length - 2;
