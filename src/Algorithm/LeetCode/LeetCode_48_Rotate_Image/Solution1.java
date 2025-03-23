@@ -1,7 +1,7 @@
 package Algorithm.LeetCode.LeetCode_48_Rotate_Image;
 //https://www.youtube.com/watch?v=9ryIfj5DohI
 
-class Solution {
+class Solution1 {
     public void rotate(int[][] matrix) {
         if (matrix == null && matrix.length == 0) {
             return;
