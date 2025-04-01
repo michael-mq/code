@@ -13,6 +13,13 @@ if (stack.peek().equals(minStack.peek())) ...
 // Note that we must use ! .equals instead of !=
 // because we are comparing Integer, not int.
 
+
+By default JVM will cache the Integer values from [-128, 127] range (see java.lang.Integer.IntegerCache.high property) but other values won't be cached:
+
+Integer x = 5000;
+Integer y = 5000;
+System.out.println(x == y); // false
+
 // Try to run:
 int collectorGroupingBy = -1024;
 int bar = -1024;
