@@ -1,39 +1,40 @@
 package Algorithm.LeetCode.LeetCode_163_Missing_Ranges;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class Solution {
-    public List<String> findMissingRanges(int[] a, int lo, int hi) {
-        List<String> res = new ArrayList<String>();
+class Solution {
+    public List<List<Integer>> findMissingRanges(
+            int[] nums,
+            int lower,
+            int upper
+    ) {
+        int n = nums.length;
+        List<List<Integer>> missingRanges = new ArrayList<>();
 
-        // the next number we need to find
-        int next = lo;
-
-        for (int j : a) {
-            // not within the range yet
-            if (j < next) continue;
-
-            // continue to find the next one
-            if (j == next) {
-                next++;
-                continue;
-            }
-
-            // get the missing range string format
-            res.add(getRange(next, j - 1));
-
-            // now we need to find the next number
-            next = j + 1;
+        if (n == 0) {
+            missingRanges.add(Arrays.asList(lower, upper));
+            return missingRanges;
+        }
+        // Check for any missing numbers between the lower bound and nums[0].
+        if (lower < nums[0]) {
+            missingRanges.add(Arrays.asList(lower, nums[0] - 1));
         }
 
-        // do a final check
-        if (next <= hi) res.add(getRange(next, hi));
+        // Check for any missing numbers between successive elements of nums.
+        for (int i = 0; i < n - 1; i++) {
+            if (nums[i + 1] - nums[i] <= 1) {
+                continue;
+            }
+            missingRanges.add(Arrays.asList(nums[i] + 1, nums[i + 1] - 1));
+        }
 
-        return res;
-    }
+        // Check for any missing numbers between the last element of nums and the upper bound.
+        if (upper > nums[n - 1]) {
+            missingRanges.add(Arrays.asList(nums[n - 1] + 1, upper));
+        }
 
-    String getRange(int n1, int n2) {
-        return (n1 == n2) ? String.valueOf(n1) : String.format("%d->%d", n1, n2);
+        return missingRanges;
     }
 }
