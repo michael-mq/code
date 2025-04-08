@@ -3,6 +3,7 @@ package Algorithm.LeetCode.LeetCode_809_Expressive_Words;
 import java.util.ArrayList;
 import java.util.List;
 
+//https://leetcode.com/problems/expressive-words/editorial
 class Solution_MyOwn_ReWriting {
     public int expressiveWords(String s, String[] words) {
         rle R1 = new rle(s);

@@ -3,12 +3,14 @@ package Algorithm.LeetCode.LeetCode_809_Expressive_Words;
 import java.util.ArrayList;
 import java.util.List;
 
+//https://leetcode.com/problems/expressive-words/editorial
 class Solution {
     public int expressiveWords(String S, String[] words) {
         RLE R = new RLE(S);
         int ans = 0;
 
-        search: for (String word: words) {
+        search:
+        for (String word : words) {
             RLE R2 = new RLE(word);
             if (!R.key.equals(R2.key)) continue;
             for (int i = 0; i < R.counts.size(); ++i) {
@@ -35,7 +37,7 @@ class RLE {
         int N = ca.length;
         int prev = -1;
         for (int i = 0; i < N; ++i) {
-            if (i == N-1 || ca[i] != ca[i+1]) {
+            if (i == N - 1 || ca[i] != ca[i + 1]) {
                 sb.append(ca[i]);
                 counts.add(i - prev);
                 prev = i;
