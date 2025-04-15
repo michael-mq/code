@@ -6,26 +6,23 @@ import java.util.Stack;
 
 public class Solution_Stack {
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack();
         Map<Character, Character> map = new HashMap<>();
 
         map.put(')', '(');
         map.put('}', '{');
         map.put(']', '[');
 
-        for (int i = 0; i < s.length(); i++) {
-            if (!stack.isEmpty() && stack.peek() == map.get(s.charAt(i))) {
+        Stack<Character> stack = new Stack<>();
+
+        for (char c : s.toCharArray()) {
+            if (!stack.isEmpty() && map.get(c) == stack.peek()) {
                 stack.pop();
             } else {
-                stack.push(s.charAt(i));
+                stack.push(c);
             }
         }
 
-        if (stack.isEmpty()) {
-            return true;
-        }
-
-        return false;
+        return stack.size() == 0;
     }
 
     public static void main(String[] args) {
