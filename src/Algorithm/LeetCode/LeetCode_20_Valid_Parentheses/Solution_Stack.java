@@ -22,7 +22,7 @@ public class Solution_Stack {
             }
         }
 
-        return stack.size() == 0;
+        return stack.isEmpty();
     }
 
     public static void main(String[] args) {
