@@ -14,7 +14,7 @@ Output: 1->1->2->3->4->4->5->6
 import java.util.PriorityQueue;
 import java.util.Queue;
 
-public class PriorityQueueSolution {
+public class Solution_PriorityQueue {
     public ListNode mergeKLists(ListNode[] lists) {
         if (lists == null || lists.length == 0) return null;
 
