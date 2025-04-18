@@ -6,7 +6,7 @@ public class Solution_Heap_Min_K_1 {
     public int findKthLargest(int[] nums, int k) {
         int len = nums.length;
 
-        PriorityQueue<Integer> minHeap = new PriorityQueue<>(k);
+        PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
         for (int i = 0; i < k; i++) {
             minHeap.add(nums[i]);

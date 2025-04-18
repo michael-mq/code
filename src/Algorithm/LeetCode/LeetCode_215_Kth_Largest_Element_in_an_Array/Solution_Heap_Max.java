@@ -8,8 +8,8 @@ public class Solution_Heap_Max {
 
         PriorityQueue<Integer> minHeap = new PriorityQueue<>(len, (a, b) -> b - a);
 
-        for (int i = 0; i < len; i++) {
-            minHeap.add(nums[i]);
+        for (int num : nums) {
+            minHeap.add(num);
         }
 
         for (int i = 0; i < k - 1; i++) {

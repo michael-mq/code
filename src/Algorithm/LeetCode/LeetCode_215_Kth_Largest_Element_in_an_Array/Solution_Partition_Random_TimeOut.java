@@ -1,6 +1,8 @@
 package Algorithm.LeetCode.LeetCode_215_Kth_Largest_Element_in_an_Array;
 
-public class Solution_Partition {
+import java.util.Random;
+
+public class Solution_Partition_Random_TimeOut {
     public int findKthLargest(int[] nums, int k) {
         int len = nums.length;
         int lo = 0;
@@ -22,6 +24,10 @@ public class Solution_Partition {
     }
 
     int partition(int[] nums, int lo, int hi) {
+        if (lo < hi) {
+            randomise(nums, lo, hi);
+        }
+
         int pivot = nums[hi];
         int i = lo;
         int j;
@@ -46,5 +52,11 @@ public class Solution_Partition {
         tmp = nums[i];
         nums[i] = nums[j];
         nums[j] = tmp;
+    }
+
+    void randomise(int[] nums, int lo, int hi) {
+        Random random = new Random();
+        int randomIndex = lo + 1 + random.nextInt(hi - lo);
+        swap(nums, randomIndex, hi);
     }
 }
