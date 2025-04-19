@@ -4,22 +4,20 @@ import java.util.Stack;
 
 class Solution {
     public boolean backspaceCompare(String s, String t) {
-        return execute(s).equals(execute(t));
+        return build(s).equals(build(t));
     }
 
-    private Stack<Character> execute(String s) {
+    private String build(String s) {
         Stack<Character> stack = new Stack<>();
 
         for (char c : s.toCharArray()) {
             if (c != '#') {
                 stack.push(c);
-            } else {
-                if (!stack.isEmpty()) {
-                    stack.pop();
-                }
+            } else if (!stack.isEmpty()) {
+                stack.pop();
             }
         }
 
-        return stack;
+        return String.valueOf(stack);
     }
 }
