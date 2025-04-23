@@ -17,7 +17,6 @@ class Solution_1 {
 
         while(l1 != null && l2 != null) {
             ListNode temp = new ListNode();
-            temp.val += move;
 
             int val = l1.val + l2.val + move;
 

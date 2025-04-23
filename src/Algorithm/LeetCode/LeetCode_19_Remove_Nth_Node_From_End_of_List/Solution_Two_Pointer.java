@@ -1,5 +1,6 @@
 package Algorithm.LeetCode.LeetCode_19_Remove_Nth_Node_From_End_of_List;
 
+//https://leetcode.com/problems/remove-nth-node-from-end-of-list/editorial
 class Solution_Two_Pointer {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         ListNode fast = head;
