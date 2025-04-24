@@ -15,7 +15,7 @@ class Node {
 }
 */
 
-class Solution2 {
+class Solution_Iteration2 {
     public Node copyRandomList(Node head) {
         if (head == null)
             return null;

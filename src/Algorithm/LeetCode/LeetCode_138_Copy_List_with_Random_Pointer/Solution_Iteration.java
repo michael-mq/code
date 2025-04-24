@@ -18,7 +18,7 @@ class Node {
 import java.util.HashMap;
 import java.util.Map;
 
-class Solution1 {
+class Solution_Iteration {
     public Node copyRandomList(Node head) {
         if (head == null)
             return null;
