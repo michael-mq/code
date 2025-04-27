@@ -12,11 +12,10 @@ class Solution {
             return 0;
         }
 
-        set.remove(beginWord);
-
         Queue<String> queue = new LinkedList<>();
 
         queue.add(beginWord);
+        set.remove(beginWord);
         int level = 0;
 
         while (!queue.isEmpty()) {
@@ -31,7 +30,7 @@ class Solution {
                 }
 
                 for (int j = 0; j < word.length(); j++) {
-                    char arr[] = word.toCharArray();
+                    char[] arr = word.toCharArray();
 
                     for (int k = 'a'; k <= 'z'; k++) {
                         arr[j] = (char) k;
