@@ -11,7 +11,6 @@ class Solution_DFS {
                 if (grid[i][j] == '1') {
                     res++;
                     dfs(grid, i, j);
-                    grid[i][j] = '0';
                 }
             }
         }
@@ -20,6 +19,7 @@ class Solution_DFS {
     }
 
     void dfs(char[][] grid, int x, int y) {
+        grid[x][y] = '0';
         int m = grid.length;
         int n = grid[0].length;
         int[][] directions = new int[][]{{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
@@ -31,7 +31,6 @@ class Solution_DFS {
             if (newX >= 0 && newX < m
                     && newY >= 0 && newY < n
                     && grid[newX][newY] == '1') {
-                grid[newX][newY] = '0';
                 dfs(grid, newX, newY);
             }
         }
