@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_329_Longest_Increasing_Path_in_a_Matrix;
 
-public class Solution {
+public class Solution_Memo {
     public int longestIncreasingPath(int[][] matrix) {
         int m = matrix.length;
         int n = matrix[0].length;
