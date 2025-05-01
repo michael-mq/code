@@ -1,28 +1,35 @@
 package Algorithm.LeetCode.LeetCode_222_Count_Complete_Tree_Nodes;
 
-
-class TreeNode {
-    int val;
-    TreeNode left;
-    TreeNode right;
-    TreeNode() {}
-    TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
-        this.val = val;
-        this.left = left;
-        this.right = right;
-    }
-}
-
+// https://www.programmercarl.com/0222.完全二叉树的节点个数.html
 class Solution_1 {
+    /**
+     * 针对完全二叉树的解法
+     * <p>
+     * 满二叉树的结点数为：2^depth - 1
+     */
     public int countNodes(TreeNode root) {
-        if (root == null) {
-            return 0;
+        if (root == null) return 0;
+
+        TreeNode left = root.left;
+        TreeNode right = root.right;
+
+        int leftDepth = 1, rightDepth = 1; // 这里初始为1是有目的的，为了下面求指数方便
+
+        while (left != null) {  // 求左子树深度
+            left = left.left;
+            leftDepth++;
         }
 
-        int left = countNodes(root.left);
-        int right = countNodes(root.right);
+        while (right != null) { // 求右子树深度
+            right = right.right;
+            rightDepth++;
+        }
 
-        return left + right + 1;
+        if (leftDepth == rightDepth) {
+            return (int) Math.pow(2, leftDepth) - 1;
+//            return (1 << leftDepth) - 1;
+        }
+
+        return countNodes(root.left) + countNodes(root.right) + 1;
     }
 }
