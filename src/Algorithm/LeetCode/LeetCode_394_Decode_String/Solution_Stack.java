@@ -1,43 +1,48 @@
 package Algorithm.LeetCode.LeetCode_394_Decode_String;
 
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.Stack;
 
-// https://leetcode-cn.com/problems/decode-string/solution/decode-string-fu-zhu-zhan-fa-di-gui-fa-by-jyd/
 class Solution_Stack {
     public String decodeString(String s) {
-        StringBuilder res = new StringBuilder();
-        int multi = 0;
+        Stack<Character> stack = new Stack<>();
 
-        Stack<Integer> stack_multi = new Stack<>();
-        Stack<String> stack_res = new Stack<>();
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == ']') {
+                Deque<Character> decodedString = new LinkedList<>();
 
-        for(Character c : s.toCharArray()) {
-            if(c == '[') {
-                stack_multi.push(multi); // push number
-                stack_res.push(res.toString()); // push previous string
-
-                multi = 0; // clear number
-                res = new StringBuilder(); // clear string
-            }
-            else if(c == ']') {
-                StringBuilder tmp = new StringBuilder();
-
-                int cur_multi = stack_multi.pop(); // pop latest number
-
-                for(int i = 0; i < cur_multi; i++) { // number multiply strings inside []
-                    tmp.append(res);
+                while (stack.peek() != '[') {
+                    decodedString.addFirst(stack.pop());
                 }
 
-                res = new StringBuilder(stack_res.pop() + tmp); // previous sting + repeated string
-            }
-            else if(c >= '0' && c <= '9') { // increase the digit of number
-                multi = multi * 10 + Integer.parseInt(c + ""); // Integer.parseInt(String.valueOf(c)) or (c - '0')
-            }
-            else { // when it's a normal letter
-                res.append(c);
+                stack.pop();
+
+                int base = 1;
+                int num = 0;
+
+                while (!stack.isEmpty() && Character.isDigit(stack.peek())) {
+                    num += (stack.pop() - '0') * base;
+                    base *= 10;
+                }
+
+                for (int j = 0; j < num; j++) {
+                    for (char c : decodedString) {
+                        stack.push(c);
+                    }
+                }
+
+            } else {
+                stack.push(s.charAt(i));
             }
         }
 
-        return res.toString();
+        StringBuilder sb = new StringBuilder();
+
+        while (!stack.isEmpty()) {
+            sb.insert(0, stack.pop());
+        }
+
+        return sb.toString();
     }
 }
