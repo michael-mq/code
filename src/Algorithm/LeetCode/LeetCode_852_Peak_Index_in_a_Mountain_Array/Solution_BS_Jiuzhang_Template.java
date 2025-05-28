@@ -16,6 +16,16 @@ class Solution_BS_Jiuzhang_Template {
             }
         }
 
+//        while (start + 1 < end) {
+//            int mid = start + (end - start) / 2;
+//
+//            if (arr[mid] > arr[mid - 1]) {
+//                start = mid;
+//            } else {
+//                end = mid;
+//            }
+//        }
+
         return arr[start] > arr[end] ? start : end;
     }
 }
