@@ -14,6 +14,7 @@ public class Solution_ExpandAroundCenter {
             if (currentLen > maxLen) {
                 maxLen = currentLen;
                 begin = i - (maxLen + 1) / 2 + 1;
+//                begin = i - (maxLen - 1) / 2;
             }
         }
 
