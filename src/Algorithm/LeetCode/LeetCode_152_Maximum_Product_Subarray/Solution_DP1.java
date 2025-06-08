@@ -1,6 +1,7 @@
 package Algorithm.LeetCode.LeetCode_152_Maximum_Product_Subarray;
 
-public class Solution {
+// https://leetcode.cn/problems/maximum-product-subarray/solutions/7561/hua-jie-suan-fa-152-cheng-ji-zui-da-zi-xu-lie-by-g
+public class Solution_DP1 {
     public int maxProduct(int[] nums) {
         int max = Integer.MIN_VALUE, iMax = 1, iMin = 1;
 
@@ -21,7 +22,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution foo = new Solution();
+        Solution_DP1 foo = new Solution_DP1();
 
         System.out.println(foo.maxProduct(new int[]{2, 3, -2, 4}));
         System.out.println(foo.maxProduct(new int[]{-2, 0, -1}));
