@@ -28,11 +28,25 @@ class MinStack {
         // IMPORTANT: Do not use `stack.peek() == minStack.peek()`, it will return false when both are -1024
         // alternatively you can do:
 
-        // int Miscs = stack.peek();
+        // int foo = stack.peek();
         // int bar = minStack.peek();
-        // if (Miscs == bar) {
+        // if (foo == bar) {
         // or
         // if (stack.peek().equals(minStack.peek())) {
+//
+//        Even if both values are -1024, the two Integer objects may not be the same object in memory, so:
+//        new Integer(-1024) == new Integer(-1024) // false
+
+//        Java caches Integer objects in the range [-128 to 127] as an optimization (called Integer caching). So:
+//        Integer a = 100;
+//        Integer b = 100;
+//        a == b; // true — same cached object
+//
+//        Integer a = -1024;
+//        Integer b = -1024;
+//        a == b; // false — different objects
+
+
         if (stack.peek().equals(minStack.peek())) {
             stack.pop();
             minStack.pop();

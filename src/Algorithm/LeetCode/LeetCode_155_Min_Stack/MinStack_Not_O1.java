@@ -2,11 +2,11 @@ package Algorithm.LeetCode.LeetCode_155_Min_Stack;
 
 import java.util.Stack;
 
-class MinStack2 {
+class MinStack_Not_O1 {
     private Stack<Integer> stack;
     private int min;
 
-    public MinStack2() {
+    public MinStack_Not_O1() {
         stack = new Stack<>();
         min = Integer.MAX_VALUE;
     }
@@ -36,5 +36,3 @@ class MinStack2 {
         return min;
     }
 }
-
-
