@@ -49,17 +49,19 @@ public class Codec_BFS {
             if (!left.equals("#")) {
                 parent.left = new TreeNode(Integer.parseInt(left));
                 q.offer(parent.left);
-            } else {
-                parent.left = null;
             }
+//            else {
+//                parent.left = null;
+//            }
             // 父节点对应的右侧子节点的值
             String right = nodes[i++];
             if (!right.equals("#")) {
                 parent.right = new TreeNode(Integer.parseInt(right));
                 q.offer(parent.right);
-            } else {
-                parent.right = null;
             }
+//            else {
+//                parent.right = null;
+//            }
         }
 
         return root;
