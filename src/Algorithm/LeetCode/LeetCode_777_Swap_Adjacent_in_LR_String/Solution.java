@@ -1,5 +1,6 @@
 package Algorithm.LeetCode.LeetCode_777_Swap_Adjacent_in_LR_String;
 
+// https://leetcode.cn/problems/swap-adjacent-in-lr-string/solutions/1864397/zhua-wa-mou-xiu-by-muse-77-tr3w
 // https://leetcode.com/problems/swap-adjacent-in-lr-string/editorial
 
 class Solution {
