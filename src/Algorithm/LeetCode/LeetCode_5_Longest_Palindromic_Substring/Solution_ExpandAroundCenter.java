@@ -27,7 +27,7 @@ public class Solution_ExpandAroundCenter {
             right++;
         }
 
-        return right - left - 1;
+        return right - left - 1; // right - left + 1 - 2
     }
 
     public static void main(String[] args) {

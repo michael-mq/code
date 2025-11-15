@@ -9,6 +9,7 @@ public class Solution_DP {
 
         for (int j = 0; j < s.length(); j++) {
             for (int i = 0; i <= j; i++ ) {
+//          for (int i = j; i >= 0; i-- ) {
                 if (s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1])) {
                     dp[i][j] = true;
 
