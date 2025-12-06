@@ -14,7 +14,7 @@ public class Solution_DP {
         dp[0][1] = 0;
 
         for (int i = 1; i < length; i++) {
-            // 继续持有 或者 买了(重点：所有的天数里面，就只能买买卖一次，也是第一次，that's why - prices[i])
+            // 继续持有 或者 买了(重点：所有的天数里面，就只能买买卖一次，也是第一次，that's why -prices[i])
             dp[i][0] = Math.max(dp[i - 1][0], -prices[i]);
             // 卖了 或者 继续不持有
             dp[i][1] = Math.max(dp[i - 1][0] + prices[i], dp[i - 1][1]);
