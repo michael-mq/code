@@ -11,6 +11,7 @@ public class Solution_PreSum_HashMap {
         // so sum1 % k == sum2 % k
         // map(preSum, index)
         Map<Integer, Integer> map = new HashMap<>();
+        // if `sum == 0` in the future, line 25 will be true
         map.put(0, -1);
 
         int sum = 0;
