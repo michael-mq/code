@@ -11,6 +11,7 @@ public class Solution_DP {
             for (int i = 0; i <= j; i++ ) {
 //          for (int i = j; i >= 0; i-- ) {
                 if (s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1])) {
+                    // can't be dp[i + 1][j - 1] || j - i < 3, because it will have error first when j = 0
                     dp[i][j] = true;
 
                     if (j - i + 1 > maxLength) {
