@@ -1,5 +1,6 @@
 package Algorithm.LeetCode.LeetCode_114_Flatten_Binary_Tree_to_Linked_List;
 
+//https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/solutions/1080708/labuladong-pythonshi-xian-by-christinalu-51oe
 class TreeNode {
     int val;
     TreeNode left;
