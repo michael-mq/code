@@ -2,7 +2,7 @@ package Algorithm.LeetCode.LeetCode_721_Accounts_Merge;
 
 import java.util.*;
 
-class Solution_DFS_Recursion {
+class Solution_DFS_1 {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         // 先创造一个索引，方便之后由邮箱查找用户名
         Map<String, String> mailToName = new HashMap<String, String>();

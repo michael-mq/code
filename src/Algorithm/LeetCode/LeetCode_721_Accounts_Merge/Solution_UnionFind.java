@@ -2,60 +2,81 @@ package Algorithm.LeetCode.LeetCode_721_Accounts_Merge;
 
 import java.util.*;
 
+//https://leetcode.cn/problems/accounts-merge/solutions/564305/zhang-hu-he-bing-by-leetcode-solution-3dyq
 class Solution_UnionFind {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
-        DSU dsu = new DSU();
-        Map<String, String> emailToName = new HashMap();
-        Map<String, Integer> emailToID = new HashMap();
-        int id = 0;
+        Map<String, Integer> emailToIndex = new HashMap<String, Integer>();
+        Map<String, String> emailToName = new HashMap<String, String>();
+
+        int emailsCount = 0;
 
         for (List<String> account : accounts) {
             String name = account.get(0);
-
-            for (int i = 1; i < account.size(); i++){
-                emailToName.put(account.get(i), name);
-
-                if (!emailToID.containsKey(account.get(i))) {
-                    emailToID.put(account.get(i), id++);
+            int size = account.size();
+            for (int i = 1; i < size; i++) {
+                String email = account.get(i);
+                if (!emailToIndex.containsKey(email)) {
+                    emailToIndex.put(email, emailsCount++);
+                    emailToName.put(email, name);
                 }
-
-                dsu.union(emailToID.get(account.get(1)), emailToID.get(account.get(i)));
             }
         }
 
-        Map<Integer, List<String>> ans = new HashMap();
+        UnionFind uf = new UnionFind(emailsCount);
 
-        for (String email : emailToName.keySet()) {
-            int index = dsu.find(emailToID.get(email));
-            ans.computeIfAbsent(index, x -> new ArrayList()).add(email);
+        for (List<String> account : accounts) {
+            String firstEmail = account.get(1);
+            int firstIndex = emailToIndex.get(firstEmail);
+            int size = account.size();
+            for (int i = 2; i < size; i++) {
+                String nextEmail = account.get(i);
+                int nextIndex = emailToIndex.get(nextEmail);
+                uf.union(firstIndex, nextIndex);
+            }
         }
 
-        for (List<String> component : ans.values()) {
-            Collections.sort(component);
-            component.add(0, emailToName.get(component.get(0)));
+        Map<Integer, List<String>> indexToEmails = new HashMap<Integer, List<String>>();
+
+        for (String email : emailToIndex.keySet()) {
+            int index = uf.find(emailToIndex.get(email));
+            List<String> account = indexToEmails.getOrDefault(index, new ArrayList<String>());
+            account.add(email);
+            indexToEmails.put(index, account);
         }
 
-        return new ArrayList(ans.values());
+        List<List<String>> merged = new ArrayList<List<String>>();
+
+        for (List<String> emails : indexToEmails.values()) {
+            Collections.sort(emails);
+            String name = emailToName.get(emails.get(0));
+            List<String> account = new ArrayList<String>();
+            account.add(name);
+            account.addAll(emails);
+            merged.add(account);
+        }
+
+        return merged;
     }
 }
 
-class DSU {
+class UnionFind {
     int[] parent;
 
-    public DSU() {
-        parent = new int[10001];
-        for (int i = 0; i <= 10000; ++i)
+    public UnionFind(int n) {
+        parent = new int[n];
+        for (int i = 0; i < n; i++) {
             parent[i] = i;
-    }
-
-    public int find(int x) {
-        if (parent[x] != x) {
-            parent[x] = find(parent[x]);
         }
-        return parent[x];
     }
 
-    public void union(int x, int y) {
-        parent[find(x)] = find(y);
+    public void union(int index1, int index2) {
+        parent[find(index2)] = find(index1);
+    }
+
+    public int find(int index) {
+        if (parent[index] != index) {
+            parent[index] = find(parent[index]);
+        }
+        return parent[index];
     }
 }
