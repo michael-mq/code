@@ -1,5 +1,6 @@
 package Algorithm.LeetCode.LeetCode_785_Is_Graph_Bipartite;
 
+//https://leetcode.cn/problems/is-graph-bipartite/solutions/333138/bfs-dfs-bing-cha-ji-san-chong-fang-fa-pan-duan-er-
 public class Solution_DFS {
     public boolean isBipartite(int[][] graph) {
         // 定义 visited 数组，初始值为 0 表示未被访问，赋值为 1 或者 -1 表示两种不同的颜色。
@@ -22,7 +23,7 @@ public class Solution_DFS {
 
         // 对当前顶点进行染色，并将当前顶点的所有邻接点染成相反的颜色。
         visited[v] = color;
-        for (int w: graph[v]) {
+        for (int w : graph[v]) {
             if (!dfs(graph, w, -color, visited)) {
                 return false;
             }

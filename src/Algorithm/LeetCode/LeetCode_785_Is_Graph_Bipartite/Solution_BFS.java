@@ -3,6 +3,7 @@ package Algorithm.LeetCode.LeetCode_785_Is_Graph_Bipartite;
 import java.util.LinkedList;
 import java.util.Queue;
 
+//https://leetcode.cn/problems/is-graph-bipartite/solutions/333138/bfs-dfs-bing-cha-ji-san-chong-fang-fa-pan-duan-er-
 public class Solution_BFS {
     public boolean isBipartite(int[][] graph) {
         // 定义 visited 数组，初始值为 0 表示未被访问，赋值为 1 或者 -1 表示两种不同的颜色。

@@ -1,5 +1,6 @@
 package Algorithm.LeetCode.LeetCode_785_Is_Graph_Bipartite;
 
+//https://leetcode.cn/problems/is-graph-bipartite/solutions/333138/bfs-dfs-bing-cha-ji-san-chong-fang-fa-pan-duan-er-
 public class Solution_UnionFind {
     public boolean isBipartite(int[][] graph) {
         // 初始化并查集
