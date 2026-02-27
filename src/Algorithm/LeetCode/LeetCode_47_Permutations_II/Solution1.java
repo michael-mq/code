@@ -13,7 +13,6 @@ class Solution1 {
 
     public List<List<Integer>> permuteUnique(int[] nums) {
         boolean[] used = new boolean[nums.length];
-        Arrays.fill(used, false);
         Arrays.sort(nums);
         backTrack(nums, used);
         return result;
@@ -42,3 +41,28 @@ class Solution1 {
         }
     }
 }
+
+//        [ 开始 ]
+//        used=[F,F,F]
+//        |
+//        ---------------------------------------------
+//        |                      |                      |
+//        选择 1_a                  选择 1_b               选择 2
+//        used=[T,F,F]             used=[F,T,F]           used=[F,F,T]
+//        路径:[1]                   路径:[1]               路径:[2]
+//        |                      |                      |
+//        |               ⚠️触发剪枝条件⚠️               |
+//        |               1_b == 1_a 且                 |
+//        |               used[0] == F                  |
+//        |               (直接 continue 跳过)           |
+//        |                                             |
+//        -------------                                 -------------
+//        |             |                               |             |
+//        选择 1_b       选择 2                          选择 1_a      选择 1_b
+//[T,T,F]       [T,F,T]                         [T,F,T]       [F,T,T]
+//        路径:[1,1]     路径:[1,2]                       路径:[2,1]    ⚠️触发剪枝⚠️
+//        |             |                               |           (同理跳过)
+//        选择 2         选择 1_b                         选择 1_b
+//[T,T,T]       [T,T,T]                         [T,T,T]
+//        [1,1,2]       [1,2,1]                         [2,1,1]
+//        (得到解)       (得到解)                          (得到解)
