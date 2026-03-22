@@ -3,10 +3,10 @@ package Algorithm.LeetCode.LeetCode_173_Binary_Search_Tree_Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Solution_InOrder_MyOwn {
+public class Solution_InOrder_DFS_MyOwn_1 {
     Queue<TreeNode> queue;
 
-    public Solution_InOrder_MyOwn(TreeNode root) {
+    public Solution_InOrder_DFS_MyOwn_1(TreeNode root) {
          queue = new LinkedList<>();
 
          helper(root);
