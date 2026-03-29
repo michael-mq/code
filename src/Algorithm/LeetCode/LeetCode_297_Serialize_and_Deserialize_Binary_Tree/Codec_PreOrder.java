@@ -50,7 +50,7 @@ public class Codec_PreOrder {
 
         /****** 前序遍历位置 ******/
         // 列表最左侧就是根节点
-        String val = nodes.remove(0);
+        String val = nodes.removeFirst();
 
         if (val.equals("#"))
             return null;

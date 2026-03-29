@@ -40,7 +40,7 @@ public class Codec_PostOrder {
 
         /****** 后序遍历位置 ******/
         // 列表最左侧就是根节点
-        String val = nodes.remove(nodes.size() - 1);
+        String val = nodes.removeLast();
 
         if (val.equals("#"))
             return null;

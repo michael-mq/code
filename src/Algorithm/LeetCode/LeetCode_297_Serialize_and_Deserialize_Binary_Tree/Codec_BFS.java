@@ -29,6 +29,7 @@ public class Codec_BFS {
 
         return sb.toString();
     }
+    // 12##345####
 
     // Decodes your encoded data to tree.
     TreeNode deserialize(String data) {
