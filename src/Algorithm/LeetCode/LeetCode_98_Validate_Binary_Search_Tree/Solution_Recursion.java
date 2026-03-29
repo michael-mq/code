@@ -2,19 +2,19 @@ package Algorithm.LeetCode.LeetCode_98_Validate_Binary_Search_Tree;
 
 public class Solution_Recursion {
     public boolean isValidBST(TreeNode root) {
-        return helper(root, null, null);
+        return helper(root, Long.MIN_VALUE, Long.MAX_VALUE);
     }
 
-    private boolean helper(TreeNode root, Integer min, Integer max) {
+    private boolean helper(TreeNode root, long min, long max) {
         if (root == null) {
             return true;
         }
 
-        if (max != null && root.val >= max) {
+        if (root.val >= max) {
             return false;
         }
 
-        if (min != null && root.val <= min) {
+        if (root.val <= min) {
             return false;
         }
 
