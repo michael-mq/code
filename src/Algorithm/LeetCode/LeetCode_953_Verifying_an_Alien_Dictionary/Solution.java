@@ -5,42 +5,40 @@ import java.util.Map;
 
 public class Solution {
     public boolean isAlienSorted(String[] words, String order) {
-        Map<Character, Integer> map = new HashMap<>();
+        // Map each character to its rank in the alien alphabet
+        int[] charOrder = new int[26];
+        for (int i = 0; i < order.length(); i++) {
+            charOrder[order.charAt(i) - 'a'] = i;
+        }
 
-        for (int i = 0; i < order.length(); ++i)
-            map.put(order.charAt(i), i);
-
-        for (int i = 0; i < words.length - 1; ++i) {
-            String word1 = words[i];
-            String word2 = words[i + 1];
-
-            boolean isDifferent = false;
-
-            // Find the first difference word1[k] != word2[k].
-            for (int k = 0; k < Math.min(word1.length(), word2.length()); ++k) {
-                if (word1.charAt(k) != word2.charAt(k)) {
-                    // two words start to have difference
-                    isDifferent = true;
-
-                    // If they compare badly, it's not sorted.
-                    if (map.get(word1.charAt(k)) > map.get(word2.charAt(k))) {
-                        return false;
-                    }
-                    break;
-                }
-            }
-
-            // If we didn't find a first difference
-            if(!isDifferent) {
-
-                // words are like ("app", "apple").
-                if (word1.length() > word2.length()) {
-                    return false;
-                }
+        // Compare adjacent words
+        for (int i = 0; i < words.length - 1; i++) {
+            if (!isSorted(words[i], words[i + 1], charOrder)) {
+                return false;
             }
         }
 
         return true;
+    }
+
+    private boolean isSorted(String word1, String word2, int[] charOrder) {
+        int len1 = word1.length();
+        int len2 = word2.length();
+        int minLen = Math.min(len1, len2);
+
+        for (int j = 0; j < minLen; j++) {
+            char c1 = word1.charAt(j);
+            char c2 = word2.charAt(j);
+
+            // If characters are different, check their relative order
+            if (c1 != c2) {
+                return charOrder[c1 - 'a'] < charOrder[c2 - 'a'];
+            }
+        }
+
+        // If we reach here, one word is a prefix of the other.
+        // The shorter word must come first.
+        return len1 <= len2;
     }
 
     public static void main(String[] args) {
@@ -49,13 +47,13 @@ public class Solution {
         String[] words = new String[]{"hello", "leetcode"};
         System.out.println(solution.isAlienSorted(words, "hlabcdefgijkmnopqrstuvwxyz"));
 
-        words = new String[]{"word","world","row"};
+        words = new String[]{"word", "world", "row"};
         System.out.println(solution.isAlienSorted(words, "worldabcefghijkmnpqstuvxyz"));
 
-        words = new String[]{"apple","app"};
+        words = new String[]{"apple", "app"};
         System.out.println(solution.isAlienSorted(words, "abcdefghijklmnopqrstuvwxyz"));
 
-        words = new String[]{"kuvp","q"};
+        words = new String[]{"kuvp", "q"};
         System.out.println(solution.isAlienSorted(words, "ngxlkthsjuoqcpavbfdermiywz"));
     }
 }
