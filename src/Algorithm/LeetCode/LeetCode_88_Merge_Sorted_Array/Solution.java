@@ -1,33 +1,30 @@
 package Algorithm.LeetCode.LeetCode_88_Merge_Sorted_Array;
 
-public class Solution {
+class Solution {
     public void merge(int[] nums1, int m, int[] nums2, int n) {
-        // Make a copy of nums1.
-        int [] nums1_copy = new int[m];
-        System.arraycopy(nums1, 0, nums1_copy, 0, m);
+        // 设置三个指针
+        int i = m - 1;      // nums1 的有效末尾
+        int j = n - 1;      // nums2 的末尾
+        int p = m + n - 1;  // nums1 的实际末尾
 
-        // Two get pointers for nums1_copy and nums2.
-        int p1 = 0;
-        int p2 = 0;
+        // 从后向前遍历，直到其中一个数组遍历完
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[p] = nums1[i];
+                i--;
+            } else {
+                nums1[p] = nums2[j];
+                j--;
+            }
+            p--;
+        }
 
-        // Set pointer for nums1
-        int p = 0;
-
-        // Compare elements from nums1_copy and nums2
-        // and add the smallest one into nums1.
-        while ((p1 < m) && (p2 < n))
-            nums1[p++] = (nums1_copy[p1] < nums2[p2]) ? nums1_copy[p1++] : nums2[p2++];
-
-        // if there are still elements to add
-        if (p1 < m)
-            System.arraycopy(nums1_copy, p1, nums1, p1 + p2, m + n - p1 - p2);
-        if (p2 < n)
-            System.arraycopy(nums2, p2, nums1, p1 + p2, m + n - p1 - p2);
-    }
-
-    public static void main(String[] args) {
-        Solution foo = new Solution();
-
-        foo.merge(new int[]{1, 2, 3, 0, 0, 0}, 3, new int[]{2, 5, 6}, 3);
+        // 如果 nums2 还有剩余（nums1 剩余则无需处理）
+        // 例如 nums1 = [4,5,6,0,0,0], nums2 = [1,2,3]
+        while (j >= 0) {
+            nums1[p] = nums2[j];
+            j--;
+            p--;
+        }
     }
 }
