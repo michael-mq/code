@@ -4,11 +4,7 @@ import java.util.*;
 
 class Solution_Queue {
     public List<String> letterCombinations(String digits) {
-        List<String> result = new ArrayList<>();
-
-        if (digits.length() == 0) {
-            return result;
-        }
+        List<String> ans = new ArrayList<>();
 
         Map<Character, ArrayList<String>> map = new HashMap<Character, ArrayList<String>>() {{
             put('2', new ArrayList<>(Arrays.asList("a", "b", "c")));
@@ -21,27 +17,28 @@ class Solution_Queue {
             put('9', new ArrayList<>(Arrays.asList("w", "x", "y", "z")));
         }};
 
-        Queue<String> queue = new LinkedList<>();
-        queue.add("");
+        Queue<String> q = new LinkedList<>();
 
-        for (int i = 0; i < digits.length(); i++) {
-            List<String> list = map.get(digits.charAt(i));
-            int size = queue.size();
+        q.offer("");
 
-            for (int j = 0; j < size; j++) {
-                String temp = queue.poll();
+        for (char c : digits.toCharArray()) {
+            List<String> list = map.get(c);
+            int size = q.size();
 
-                for (int k = 0; k < list.size(); k++) {
-                    queue.add(temp + list.get(k));
+            for (int i = 0; i < size; i++) {
+                String temp = q.poll();
+
+                for (String s : list) {
+                    q.offer(temp + s);
                 }
             }
         }
 
-        while (!queue.isEmpty()) {
-            result.add(queue.poll());
+        while (!q.isEmpty()) {
+            ans.add(q.poll());
         }
 
-        return result;
+        return ans;
     }
 }
 
