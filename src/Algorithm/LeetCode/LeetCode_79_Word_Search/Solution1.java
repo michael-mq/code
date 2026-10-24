@@ -1,6 +1,6 @@
 package Algorithm.LeetCode.LeetCode_79_Word_Search;
 
-class Solution {
+class Solution1 {
     public boolean exist(char[][] board, String word) {
         int m = board.length;
         int n = board[0].length;
