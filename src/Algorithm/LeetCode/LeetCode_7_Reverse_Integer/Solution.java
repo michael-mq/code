@@ -1,39 +1,30 @@
 package Algorithm.LeetCode.LeetCode_7_Reverse_Integer;
 
-import java.util.ArrayList;
-import java.util.List;
-
+// MAX_VALUE = 2,147,483,647, MIN_VALUE = -2,147,483,648
 class Solution {
     public int reverse(int x) {
-        if (x >= -9 && x <= 9) {
+        if (x == 0) {
             return x;
         }
 
-        List<Integer> list = new ArrayList<>();
-        int sign = 1;
-        long result = 0;
+        int ans = 0;
 
-        if (x < 0) {
-            sign = -1;
+        while (x != 0) {
+            int d = x % 10;
+
+            if (ans > 214748364 || ans == 214748364 && d > 7) {
+                return 0;
+            }
+
+            if (ans < -214748364 || ans == -214748364 && d < -8) {
+                return 0;
+            }
+
+            ans = ans * 10 + d;
+
+            x = x / 10;
         }
 
-        x = Math.abs(x);
-
-        while (x > 0) {
-            list.add(x % 10);
-            x /= 10;
-        }
-
-        for (int n : list) {
-            result = result * 10 + n;
-        }
-
-        result = sign == 1 ? result : -result;
-
-        if (result < Integer.MIN_VALUE || result > Integer.MAX_VALUE) {
-            return 0;
-        }
-
-        return (int) result;
+        return ans;
     }
 }
