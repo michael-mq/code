@@ -12,13 +12,15 @@ public class Solution_three_pointer {
             if (nums[i] == 0) {
                 swap(nums, i, left);
                 left++;
-                // 1. `i` comes from the left
-                // 2. the only time when nums[left] can be 0 is when i == left
-                // 3. otherwise, nums[left] won't be 0
+                // i 是探路者，它永远跑在 left 的前面或与 left 重合（i >= left）
+                // 当 i == left 时，说明 i 在探路的过程中，还没有遇到过任何 1
+                // 当 i > left 时（重点），在 left 位置上，以及 left 到 i 之间的所有元素，全部都是 1
             } else if (nums[i] == 2) {
                 swap(nums, i, right);
                 right--;
-                i--; // Stay and check again. We don't know what was swapped from nums[right], might be 2
+                i--;
+                // Stay and check again
+                // 从 right 换到 i 位置的数字，你从没见过。它可能是 2，可能是 1，也可能是个 0
             }
         }
     }
