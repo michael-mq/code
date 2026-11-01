@@ -46,7 +46,6 @@ class MinStack {
 //        Integer b = -1024;
 //        a == b; // false — different objects
 
-
         if (stack.peek().equals(minStack.peek())) {
             stack.pop();
             minStack.pop();
