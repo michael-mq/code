@@ -2,7 +2,7 @@ package Algorithm.LeetCode.LeetCode_36_Valid_Sudoku;
 
 // https://leetcode-cn.com/problems/valid-sudoku/solution/36-jiu-an-zhao-cong-zuo-wang-you-cong-shang-wang-x/
 
-public class Solution_better {
+public class Solution_ArrayCount {
     public boolean isValidSudoku(char[][] board) {
         // the 2nd level of array has 10 element because the max number is 9 as index meaning 10th element
         // row[x][0] is always empty because there is no number 0
@@ -32,7 +32,7 @@ public class Solution_better {
     }
 
     public static void main(String[] args) {
-        Solution_better foo = new Solution_better();
+        Solution_ArrayCount foo = new Solution_ArrayCount();
 
         char[][] board = new char[][]{
                 {'5', '3', '.', '.', '7', '.', '.', '.', '.'},

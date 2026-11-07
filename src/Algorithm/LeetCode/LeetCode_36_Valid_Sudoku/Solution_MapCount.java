@@ -5,16 +5,16 @@ import java.util.Map;
 
 // https://leetcode-cn.com/problems/valid-sudoku/solution/you-xiao-de-shu-du-by-leetcode/
 
-public class Solution {
+public class Solution_MapCount {
     public boolean isValidSudoku(char[][] board) {
         // init data
         Map<Integer, Integer>[] rows = new HashMap[9];
         Map<Integer, Integer>[] columns = new HashMap[9];
         Map<Integer, Integer>[] boxes = new HashMap[9];
         for (int i = 0; i < 9; i++) {
-            rows[i] = new HashMap<Integer, Integer>();
-            columns[i] = new HashMap<Integer, Integer>();
-            boxes[i] = new HashMap<Integer, Integer>();
+            rows[i] = new HashMap<>();
+            columns[i] = new HashMap<>();
+            boxes[i] = new HashMap<>();
         }
 
         // validate a board
@@ -26,14 +26,18 @@ public class Solution {
                     int n = (int) num;
                     int box_index = (i / 3) * 3 + j / 3;
 
+                    if (rows[i].containsKey(n) || columns[j].containsKey(n) || boxes[box_index].containsKey(n)) {
+                        return false;
+                    }
+
                     // keep the current cell value
                     rows[i].put(n, rows[i].getOrDefault(n, 0) + 1);
                     columns[j].put(n, columns[j].getOrDefault(n, 0) + 1);
                     boxes[box_index].put(n, boxes[box_index].getOrDefault(n, 0) + 1);
 
-                    // check if this value has been already seen before
-                    if (rows[i].get(n) > 1 || columns[j].get(n) > 1 || boxes[box_index].get(n) > 1)
-                        return false;
+                    // // check if this value has been already seen before
+                    // if (rows[i].get(n) > 1 || columns[j].get(n) > 1 || boxes[box_index].get(n) > 1)
+                    //     return false;
                 }
             }
         }
@@ -42,7 +46,7 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-        Solution foo = new Solution();
+        Solution_MapCount foo = new Solution_MapCount();
 
         char[][] board = new char[][]{
                 {'5', '3', '.', '.', '7', '.', '.', '.', '.'},
